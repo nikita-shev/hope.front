@@ -1,0 +1,40 @@
+@import "variables"
+@import "vendor"
+@import "mixins"
+
+
+*, *:before, *:after
+  box-sizing: border-box
+
+*:focus-visible
+  outline-offset: 1px
+  outline: 2px solid darken(#00b5ee, 15%)
+
+h1, h2, h3, h4, h5, h6, p, button
+  margin: 0
+  padding: 0
+
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+a
+  text-decoration: none
+  color: var(--text-color)
+
+img
+  max-width: 100%
+
+%visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+.visually-hidden
+  @extend %visually-hidden
