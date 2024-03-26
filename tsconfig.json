@@ -28,7 +28,8 @@
             "@routers/*": ["routers/*"],
             "@services/*": ["services/*"],
             "@utils/*": ["utils/*"]
-        }
+        },
+        "esModuleInterop": true
     },
     "include": ["src", "./declaration.d.ts"],
     "references": [
