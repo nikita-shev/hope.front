@@ -1,0 +1,37 @@
+.btn
+  border: none
+  background-color: transparent
+  cursor: pointer
+
+  &:focus, &::-moz-focus-inner
+    outline-offset: 1px
+    outline: 2px solid darken(#00b5ee, 15%)
+
+
+%commonBtnStyles
+  @include font(12px, 400, "Lato")
+  border: 1px solid var(--color-primary)
+  border-radius: 25px
+  transition: color 400ms ease-in, background-color 400ms ease-in
+
+
+.btn_contained
+  @extend %commonBtnStyles
+  color: #ffffff
+  background-color: var(--color-primary)
+
+  &:hover
+    @media (min-width: 993px)
+      color: darken(#ffffff, 8%)
+      background-color: darken(#00b5ee, 8%)
+
+
+.btn_outlined
+  @extend %commonBtnStyles
+  color: var(--color-primary)
+  background-color: #ffffff
+
+  &:hover
+    @media (min-width: 993px)
+      color: #ffffff
+      background-color: var(--color-primary)
