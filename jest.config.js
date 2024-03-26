@@ -25,7 +25,7 @@ const config = {
     // collectCoverageFrom: undefined,
 
     // The directory where Jest should output its coverage files
-    coverageDirectory: 'coverage'
+    coverageDirectory: 'coverage',
 
     // An array of regexp pattern strings used to skip coverage collection
     // coveragePathIgnorePatterns: [
@@ -90,7 +90,19 @@ const config = {
     // ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    moduleNameMapper: {
+        '^.+\\.(css|sass|scss)$': 'identity-obj-proxy',
+
+        '^@/(.*)$': '<rootDir>/src/$1',
+        '^@components/(.*)$': '<rootDir>/src/components/$1',
+        '^@assets/(.*)$': '<rootDir>/src/assets/$1',
+        '^@layout/(.*)$': '<rootDir>/src/layout/$1',
+        '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+        '^@store/(.*)$': '<rootDir>/src/store/$1',
+        '^@routers/(.*)$': '<rootDir>/src/routers/$1',
+        '^@services/(.*)$': '<rootDir>/src/services/$1',
+        '^@utils/(.*)$': '<rootDir>/src/utils/$1'
+    }
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
