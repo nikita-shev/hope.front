@@ -1,3 +1,6 @@
+@use '@assets/styles/mixins' as m
+
+
 .btn
   border: none
   background-color: transparent
@@ -9,7 +12,7 @@
 
 
 %commonBtnStyles
-  @include font(12px, 400, "Lato")
+  @include m.font(12px, 400)
   border: 1px solid var(--color-primary)
   border-radius: 25px
   transition: color 400ms ease-in, background-color 400ms ease-in
