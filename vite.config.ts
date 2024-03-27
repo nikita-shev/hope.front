@@ -17,6 +17,9 @@ export default defineConfig({
             '@services': path.resolve(__dirname, './src/services'),
             '@utils': path.resolve(__dirname, './src/utils')
         }
+    },
+    css: {
+        devSourcemap: true
     }
     // base: './'
 });
