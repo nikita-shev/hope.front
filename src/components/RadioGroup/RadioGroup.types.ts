@@ -1,9 +1,9 @@
-import { IRadioStyles } from 'components/Radio';
+import { IChoiceControlsStyles } from '@/types/ChoiceControls.ts';
 
 export interface IRadioGroup {
     id: string;
     name: string;
     label: string;
     defaultChecked?: boolean;
-    style?: IRadioStyles;
+    style?: IChoiceControlsStyles;
 }
