@@ -1,4 +1,4 @@
-import { IRadioStyles } from '@components/Radio/Radio.types.ts';
+import { IChoiceControlsStyles } from '@/types/ChoiceControls.ts';
 import s from '@components/Radio/Radio.module.sass';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
     name: string;
     label: string;
     isChecked: boolean;
-    style?: IRadioStyles;
+    style?: IChoiceControlsStyles;
     onChange: (id: string) => void;
 }
 
@@ -14,9 +14,8 @@ export function Radio({ id, name, label, isChecked, style, onChange, ...props }:
     const handleRadioChange = (): void => onChange(id);
 
     return (
-        <label className={s['radio']} style={style?.wrap}>
+        <label className={s.radio} style={style?.wrap}>
             <input
-                className={s['radio__input']}
                 style={style?.input}
                 type="radio"
                 name={name}
@@ -25,7 +24,7 @@ export function Radio({ id, name, label, isChecked, style, onChange, ...props }:
                 {...props}
                 onChange={handleRadioChange}
             />
-            <span className={s['radio__text']} style={style?.text}>
+            <span className={s.radio__text} style={style?.text}>
                 {label}
             </span>
         </label>

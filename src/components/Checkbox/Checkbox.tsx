@@ -1,12 +1,12 @@
 import { useState, ChangeEvent, ReactElement } from 'react';
-import { IChoiceControls } from '@/types/ChoiceControls.ts';
+import { IChoiceControlsStyles } from '@/types/ChoiceControls.ts';
 import s from '@components/Checkbox/Checkbox.module.sass';
 
 interface Props {
     label: string;
     defaultChecked?: boolean;
     disabled?: boolean;
-    style?: IChoiceControls;
+    style?: IChoiceControlsStyles;
     onChange: (value: boolean) => void;
 }
 
