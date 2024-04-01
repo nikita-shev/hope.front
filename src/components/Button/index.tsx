@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { CSSProperties, ReactElement, ReactNode } from 'react';
 import { Variant } from '@components/Button/Button.types.ts';
 import { useBtnClasses } from '@components/Button/hooks/useBtnClasses.ts';
 
@@ -7,6 +7,7 @@ interface Props {
     children?: ReactNode;
     title?: string;
     className?: string;
+    style?: CSSProperties;
     onClick: () => void;
 }
 
@@ -17,7 +18,7 @@ export function Button({
     className,
     onClick,
     ...props
-}: Props): React.ReactElement {
+}: Props): ReactElement {
     const classes: string = useBtnClasses(variant, className);
     const content: ReactNode | string = children ? children : title;
 
