@@ -1,4 +1,4 @@
-@use '@assets/styles/mixins' as m
+@use '@assets/styles/mixins/_index' as m
 
 
 .btn
@@ -18,7 +18,7 @@
   transition: color 400ms ease-in, background-color 400ms ease-in
 
 
-.btn_contained
+.btn--contained
   @extend %commonBtnStyles
   color: #ffffff
   background-color: var(--color-primary)
@@ -29,7 +29,7 @@
       background-color: darken(#00b5ee, 8%)
 
 
-.btn_outlined
+.btn--outlined
   @extend %commonBtnStyles
   color: var(--color-primary)
   background-color: #ffffff
