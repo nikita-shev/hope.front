@@ -1,11 +1,12 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, ReactElement } from 'react';
+import { IChoiceControls } from '@/types/ChoiceControls.ts';
 import s from '@components/Checkbox/Checkbox.module.sass';
 
 interface Props {
     label: string;
     defaultChecked?: boolean;
     disabled?: boolean;
-    style?: React.CSSProperties;
+    style?: IChoiceControls;
     onChange: (value: boolean) => void;
 }
 
@@ -16,7 +17,7 @@ export function Checkbox({
     style,
     onChange,
     ...props
-}: Props): React.ReactElement {
+}: Props): ReactElement {
     const [isChecked, setIsChecked] = useState<boolean>(Boolean(defaultChecked));
 
     const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -27,8 +28,9 @@ export function Checkbox({
     };
 
     return (
-        <label className={s.checkbox} style={style} data-disabled={disabled}>
+        <label className={s.checkbox} style={style?.wrap} data-disabled={disabled}>
             <input
+                style={style?.input}
                 type="checkbox"
                 checked={isChecked}
                 disabled={disabled}
@@ -36,7 +38,9 @@ export function Checkbox({
                 {...props}
                 onChange={handleCheckboxChange}
             />
-            <span className={s.checkbox__text}>{label}</span>
+            <span className={s.checkbox__text} style={style?.text}>
+                {label}
+            </span>
         </label>
     );
 }
