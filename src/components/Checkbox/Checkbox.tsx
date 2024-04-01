@@ -36,7 +36,7 @@ export function Checkbox({
                 {...props}
                 onChange={handleCheckboxChange}
             />
-            <span className={s.checkboxText}>{label}</span>
+            <span className={s.checkbox__text}>{label}</span>
         </label>
     );
 }

@@ -1,4 +1,4 @@
-@use "@assets/styles/mixins/parts/font" as m
+@use "@assets/styles/mixins/parts/_font" as m
 
 
 .checkbox
@@ -8,7 +8,7 @@
   cursor: pointer
 
 
-//.checkboxElem
+//.checkbox__input
 input[data-custom-checkbox='true']
   border-radius: 4px
 
@@ -26,7 +26,7 @@ input[data-custom-checkbox='true']
     --r: 43deg
 
 
-.checkboxText
+.checkbox__text
   @include m.font(14px, 400)
   line-height: 1
   color: var(--text-color)
