@@ -14,9 +14,8 @@ export function Radio({ id, name, label, isChecked, style, onChange, ...props }:
     const handleRadioChange = (): void => onChange(id);
 
     return (
-        <label className={s['radio']} style={style?.wrap}>
+        <label className={s.radio} style={style?.wrap}>
             <input
-                className={s['radio__input']}
                 style={style?.input}
                 type="radio"
                 name={name}
@@ -25,7 +24,7 @@ export function Radio({ id, name, label, isChecked, style, onChange, ...props }:
                 {...props}
                 onChange={handleRadioChange}
             />
-            <span className={s['radio__text']} style={style?.text}>
+            <span className={s.radio__text} style={style?.text}>
                 {label}
             </span>
         </label>
