@@ -32,10 +32,10 @@ describe('Hook useBtnClasses()', () => {
     });
 
     test('should create a class based on variant=contained', () => {
-        expect(useBtnClasses(type, customClass)).toBe(`${mainClass} btn_${type} ${customClass}`);
+        expect(useBtnClasses(type, customClass)).toBe(`${mainClass} btn--${type} ${customClass}`);
     });
 
     test('should create a class based on variant=outlined', () => {
-        expect(useBtnClasses(type, undefined)).toBe(`${mainClass} btn_${type}`);
+        expect(useBtnClasses(type, undefined)).toBe(`${mainClass} btn--${type}`);
     });
 });
