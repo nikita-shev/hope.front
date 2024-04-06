@@ -6,4 +6,5 @@ export interface IError {
 export interface ISettings {
     minLength?: number;
     maxLength?: number;
+    template?: RegExp;
 }
