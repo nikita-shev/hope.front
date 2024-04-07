@@ -2,7 +2,7 @@ import { IError, ISettings } from '@components/TextField/utils/validators';
 
 export const validateTextField = (
     value: string,
-    { minLength, maxLength }: ISettings = {}
+    { minLength, maxLength }: ISettings = { minLength: 5, maxLength: 10 }
 ): IError => {
     const message: string =
         minLength && value.length < minLength

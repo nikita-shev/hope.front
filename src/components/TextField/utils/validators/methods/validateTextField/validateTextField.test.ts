@@ -1,7 +1,8 @@
 import { validateTextField } from '@components/TextField/utils/validators/methods/validateTextField/validateTextField.ts';
+import { ISettings } from '@components/TextField/utils/validators';
 
 describe('Method validateTextField()', () => {
-    const settings: { minLength: number; maxLength: number } = {
+    const settings: ISettings = {
         minLength: 5,
         maxLength: 12
     };
@@ -48,8 +49,8 @@ describe('Method validateTextField()', () => {
         expect(message).toBe(`Максимальное количество символов: ${settings.maxLength}`);
     });
 
-    test('should work correctly without specifying settings', () => {
-        const { isError, message } = validateTextField('Hello', undefined);
+    test('should run correctly without specifying settings', () => {
+        const { isError, message } = validateTextField('Hello');
 
         expect(isError).toBeFalsy();
         expect(message).toBe('');
