@@ -14,7 +14,7 @@ export function Input({
     onChange,
     ...props
 }: Props): ReactElement {
-    const newClassName: string = `${s.input} ${className}`.trim();
+    const newClassName: string = `${className} ${s.input}`.trim();
 
     return (
         <input

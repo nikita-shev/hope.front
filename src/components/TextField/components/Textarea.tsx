@@ -13,7 +13,7 @@ export function Textarea({
     onChange,
     ...props
 }: Props): ReactElement {
-    const newClassName: string = `${s.textarea} ${className}`.trim();
+    const newClassName: string = `${className} ${s.textarea}`.trim();
 
     return (
         <textarea
