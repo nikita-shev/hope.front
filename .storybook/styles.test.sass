@@ -7,3 +7,19 @@
 
 .border-btn
   border: 1px solid #00b5ee
+
+
+.t-text-field
+  width: 350px
+  padding: 20px
+  border: 1px solid var(--color-secondary) !important
+  &:focus
+    border-color: var(--color-primary) !important
+
+input[class^="t-text-field"] + p
+  right: 5px
+  bottom: 2px
+
+textarea[class^="t-text-field"] + p
+  right: 5px
+  bottom: 5px
