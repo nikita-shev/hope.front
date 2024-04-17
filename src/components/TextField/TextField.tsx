@@ -10,7 +10,7 @@ interface IControls {
 }
 
 interface Props extends ITextField {
-    isSubmit: boolean;
+    isSubmit?: boolean;
     onChange: (id: string, value: string, isValid: boolean) => void;
 }
 
@@ -29,7 +29,7 @@ export function TextField({
     ...props
 }: Props): ReactElement {
     const { isError, message } = validateField(validation, value);
-    const isShowError: boolean = isSubmit && isError;
+    const isShowError: boolean = Boolean(isSubmit) && isError;
 
     const controls: IControls = {
         standard: Input,
