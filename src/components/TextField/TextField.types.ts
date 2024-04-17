@@ -11,7 +11,7 @@ export interface ITextField {
     id: string;
     variant: 'standard' | 'multiline';
     value: string;
-    validation: Validation;
+    validation?: Validation;
     type?: HTMLInputTypeAttribute;
     name?: string;
     className?: string;
