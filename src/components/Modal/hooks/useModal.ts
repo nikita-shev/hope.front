@@ -1,14 +1,8 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { IModal } from '@components/Modal/Modal.types.ts';
+import { IModal, IModalObj } from '@components/Modal/Modal.types.ts';
 import { removeBodyStyles, setBodyStyles } from '@components/Modal/utils';
 
-interface IReturnValues {
-    modal: IModal;
-    openModal: (title: string, modal: ReactElement) => void;
-    closeModal: () => void;
-}
-
-export const useModal = (): IReturnValues => {
+export const useModal = (): IModalObj => {
     const [modal, setModal] = useState<IModal>({
         title: '',
         isOpen: false,
