@@ -1,0 +1,42 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.breadcrumbs
+  width: 100%
+
+
+.breadcrumbs__title
+  @include m.font(14px, 400)
+
+
+.breadcrumbs__list
+  display: flex
+  align-items: center
+
+.breadcrumbs__item
+  &:not(:last-child)
+    position: relative
+    margin-right: 17px
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      right: -16px
+      bottom: 3px
+      border: 5px solid transparent
+      border-left: 5px solid var(--text-color)
+
+    &:after
+      right: -15px
+      border-left: 5px solid #ffffff
+
+  &:last-child > .breadcrumbs__link
+    pointer-events: none
+
+.breadcrumbs__link
+  @include m.font(15px, 300)
+
+
+@media (max-width: 992px)
+  .breadcrumbs
+    display: none
