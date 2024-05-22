@@ -14,7 +14,7 @@ export function Paper({ content, children, settings = { isHover: false } }: Prop
 
     return (
         <article className={s.paper} data-hover={isHover || null}>
-            <div className={s['paper__wrap']}>{content || children}</div>
+            {content || children}
         </article>
     );
 }
