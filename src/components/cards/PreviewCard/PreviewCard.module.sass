@@ -1,0 +1,127 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.card
+  position: relative
+  width: 100%
+  height: 100%
+
+  &:before
+    content: ''
+    position: absolute
+    top: 10px
+    left: 10px
+    width: 40px
+    height: 40px
+
+.card--sale:before
+  content: url("@assets/images/icons/icons.svg#sale-card")
+
+.card--new:before
+  content: 'NEW'
+  display: flex
+  justify-content: center
+  align-items: center
+  @include m.font(10px, 600)
+  text-transform: uppercase
+  border-radius: 50px
+  background-color: #fff8c7
+  color: #da7566
+
+
+.card__wrap
+  display: flex
+  flex-direction: column
+  padding: 20px
+
+.card__img
+  display: inline-block
+  width: 160px
+  height: 210px
+  margin: 10px auto 25px
+  border-radius: 5px
+  background-color: var(--color-primary)
+  object-fit: cover
+
+.card__title
+  margin-bottom: 5px
+  @include m.font(16px, 600)
+  text-align: center
+
+.card__subtitle
+  margin-bottom: 20px
+  @include m.font(13px, 400)
+  text-align: center
+  color: var(--text-color)
+
+
+.card__price
+  margin: auto auto 15px auto
+
+.price
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 90%
+
+.price__text
+  @include m.font(16px, 400, RobotoCondensed)
+  color: var(--text-color)
+
+  & span
+    font-weight: 700
+
+.price__cart
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 57px
+  height: 37px
+
+
+.card__footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.card__favorites
+  display: flex
+  align-items: center
+  column-gap: 7px
+  @include m.font(13px, 300)
+  color: var(--text-color)
+
+  & img
+    width: 16px
+
+.card__fast-buy
+  @include m.font(13px, 600)
+  color: var(--color-primary)
+
+
+@media (max-width: 1200px)
+  .card__img
+    height: 175px
+
+  .card__wrap
+    padding-left: 15px
+    padding-right: 15px
+
+  .price
+    width: 100%
+
+  .card__footer
+    flex-direction: column
+    row-gap: 10px
+
+@media (max-width: 992px)
+  .card__wrap
+    padding-left: 20px
+    padding-right: 20px
+
+@media (max-width: 768px)
+  .price
+    width: 210px
+
+  .card__footer
+    flex-direction: row
