@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-type Status = 'sale' | 'new' | null;
+type Statuses = 'sale' | 'new' | null;
 type Sizes = '3XL' | '4XL' | '5XL' | 'L' | 'M' | 'S' | 'XL' | 'XS' | 'XXL';
 
 interface IColor {
@@ -31,12 +31,12 @@ export interface IProduct {
     brand: string;
     vendorCode: string;
     price: IPrice;
-    availability: boolean;
-    count: number;
+    isInStock: boolean;
+    quantity: number;
     rating: number;
-    status: Status;
+    status: Statuses;
     colors: IColor[];
     sizes: Sizes[];
-    parameters: IParam[][] | null;
+    options: IParam[][] | null;
     images: IImages;
 }
