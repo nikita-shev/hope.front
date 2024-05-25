@@ -15,8 +15,8 @@ export function Rating({ value }: Props): ReactElement {
         <div className={s.rating}>
             <div className={s['rating__stars']}>
                 {template.map((el) => (
-                    <Button className={s['rating__btn']} variant={'text'} onClick={() => {}}>
-                        <StarIcon key={el} isActive={el <= value} />
+                    <Button key={el} className={s['rating__btn']} variant={'text'} onClick={() => {}}>
+                        <StarIcon isActive={el <= value} />
                     </Button>
                 ))}
             </div>
