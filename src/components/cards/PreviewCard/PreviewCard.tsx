@@ -4,6 +4,7 @@ import { Paper } from '@components/Paper';
 import { Button } from '@components/Button';
 import { CartIcon } from '@components/icons';
 import s from '@components/cards/PreviewCard/PreviewCard.module.sass';
+import ls from '@components/cards/styles/cards.module.sass';
 
 interface Props {
     product: IProduct;
@@ -13,7 +14,7 @@ interface Props {
 
 export function PreviewCard({ product, className = '', style }: Props): ReactElement {
     const cardClassName: string =
-        `${className} ${s.card} ${product.status ? s[`card--${product.status}`] : ''} `.trim();
+        `${className} ${s.card} ${product.status ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
 
     const addProductToCart = () => {};
     const addProductToFavorites = () => {};
