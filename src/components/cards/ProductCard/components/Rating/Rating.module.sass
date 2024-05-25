@@ -1,0 +1,25 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.rating
+  display: inline-flex
+  align-items: center
+  column-gap: 5px
+  height: 100%
+  padding: 7px
+  border-radius: 8px
+  background-color: #f7f7f7
+
+
+.rating__stars
+  display: flex
+  column-gap: 1px
+
+.rating__btn
+  width: 16px
+  height: 16px
+
+
+.rating__comments
+  @include m.font(16px, 400)
+  color: var(--text-color)
