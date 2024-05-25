@@ -8,7 +8,7 @@ interface IColor {
     value: CSSProperties | string;
 }
 
-interface IPrice {
+export interface IPrice {
     current: number;
     new?: number;
 }
