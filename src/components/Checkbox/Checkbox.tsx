@@ -6,6 +6,7 @@ interface Props {
     label: string;
     defaultChecked?: boolean;
     disabled?: boolean;
+    className?: string;
     style?: IChoiceControlsStyles;
     onChange: (value: boolean) => void;
 }
@@ -14,11 +15,13 @@ export function Checkbox({
     label,
     defaultChecked,
     disabled,
+    className = '',
     style,
     onChange,
     ...props
 }: Props): ReactElement {
     const [isChecked, setIsChecked] = useState<boolean>(Boolean(defaultChecked));
+    const labelClassName: string = `${className} ${s.checkbox}`.trim();
 
     const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>): void => {
         const newValue: boolean = e.currentTarget.checked;
@@ -28,7 +31,7 @@ export function Checkbox({
     };
 
     return (
-        <label className={s.checkbox} style={style?.wrap} data-disabled={disabled}>
+        <label className={labelClassName} style={style?.wrap} data-disabled={disabled}>
             <input
                 style={style?.input}
                 type="checkbox"
