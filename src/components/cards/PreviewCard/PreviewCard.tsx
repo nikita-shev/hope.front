@@ -4,7 +4,7 @@ import { Paper } from '@components/Paper';
 import { Button } from '@components/Button';
 import { CartIcon } from '@components/icons';
 import s from '@components/cards/PreviewCard/PreviewCard.module.sass';
-import ls from '@components/cards/styles/cards.module.sass';
+import ls from '@components/cards/shared/styles/cards.module.sass';
 
 interface Props {
     product: IProduct;
