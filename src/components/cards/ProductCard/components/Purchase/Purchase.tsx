@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { IPrice } from '@/types/Product.ts';
 import { Button } from '@components/Button';
+import { Price } from '@components/cards/shared/components/Price/Price.tsx';
 import s from '@components/cards/ProductCard/components/Purchase/Purchase.module.sass';
 
 interface Props {
@@ -24,10 +25,7 @@ export function Purchase({
 
     return (
         <div className={purchaseClassName}>
-            <div className={s.price}>
-                <span className={s['price__old']}>{price.current}&nbsp;₽</span>
-                <span className={s['price__new']}>{price.new}&nbsp;₽</span>
-            </div>
+            <Price price={price} />
 
             <div className={s['purchase__wrap']}>
                 <Button
