@@ -1,0 +1,99 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.card
+  position: relative
+  width: 100%
+  height: 100%
+
+  &:before
+    top: 10px
+    left: 10px
+
+
+.card__wrap
+  display: flex
+  flex-direction: column
+  padding: 20px
+
+.card__img
+  display: inline-block
+  width: 160px
+  height: 210px
+  margin: 10px auto 25px
+  border-radius: 5px
+  background-color: var(--color-primary)
+  object-fit: cover
+
+.card__title
+  margin-bottom: 5px
+  @include m.font(16px, 600)
+  text-align: center
+
+.card__subtitle
+  margin-bottom: 20px
+  @include m.font(13px, 400)
+  text-align: center
+  color: var(--text-color)
+
+
+.card__product-buy
+  margin: auto auto 15px auto
+
+.product-buy
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 90%
+
+.product-buy__cart
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 57px
+  height: 37px
+
+
+.card__footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.card__favorites
+  display: flex
+  align-items: center
+  column-gap: 7px
+  @include m.font(13px, 300)
+  color: var(--text-color)
+
+  & img
+    width: 16px
+
+.card__fast-buy
+  @include m.font(13px, 600)
+  color: var(--color-primary)
+
+
+@media (max-width: 1200px)
+  .card__img
+    height: 175px
+
+  .card__wrap
+    padding-left: 15px
+    padding-right: 15px
+
+  .card__footer
+    flex-direction: column
+    gap: 10px
+
+@media (max-width: 992px)
+  .card__wrap
+    padding-left: 20px
+    padding-right: 20px
+
+@media (max-width: 768px)
+  .product-buy
+    width: 210px
+
+  .card__footer
+    flex-direction: row

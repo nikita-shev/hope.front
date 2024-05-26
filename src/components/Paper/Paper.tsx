@@ -1,19 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 import s from '@components/Paper/Paper.module.sass';
 
 interface Props {
-    content: ReactElement;
+    content?: ReactElement;
+    children?: ReactNode;
     settings?: {
         isHover?: boolean;
     };
 }
 
-export function Paper({ content, settings = { isHover: false } }: Props): ReactElement {
+export function Paper({ content, children, settings = { isHover: false } }: Props): ReactElement {
     const { isHover } = settings;
 
     return (
         <article className={s.paper} data-hover={isHover || null}>
-            <div className={s['paper__wrap']}>{content}</div>
+            {content || children}
         </article>
     );
 }

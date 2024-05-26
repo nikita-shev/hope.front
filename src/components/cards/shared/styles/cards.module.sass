@@ -1,0 +1,22 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.card:before
+  content: ''
+  position: absolute
+  width: 40px
+  height: 40px
+
+.card--sale:before
+  content: url("@assets/images/icons/icons.svg#sale-card")
+
+.card--new:before
+  content: 'NEW'
+  display: flex
+  justify-content: center
+  align-items: center
+  @include m.font(10px, 600)
+  text-transform: uppercase
+  border-radius: 50%
+  background-color: #fff8c7
+  color: #da7566
