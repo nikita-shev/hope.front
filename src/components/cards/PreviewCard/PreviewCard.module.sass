@@ -37,23 +37,16 @@
   color: var(--text-color)
 
 
-.card__price
+.card__product-buy
   margin: auto auto 15px auto
 
-.price
+.product-buy
   display: flex
   align-items: center
   justify-content: space-between
   width: 90%
 
-.price__text
-  @include m.font(16px, 400, RobotoCondensed)
-  color: var(--text-color)
-
-  & span
-    font-weight: 700
-
-.price__cart
+.product-buy__cart
   display: flex
   align-items: center
   justify-content: center
@@ -89,12 +82,9 @@
     padding-left: 15px
     padding-right: 15px
 
-  .price
-    width: 100%
-
   .card__footer
     flex-direction: column
-    row-gap: 10px
+    gap: 10px
 
 @media (max-width: 992px)
   .card__wrap
@@ -102,7 +92,7 @@
     padding-right: 20px
 
 @media (max-width: 768px)
-  .price
+  .product-buy
     width: 210px
 
   .card__footer
