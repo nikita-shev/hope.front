@@ -1,10 +1,18 @@
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import s from '@components/icons/components/LoadingIcon/LoadingIcon.module.sass';
 
-export function LoadingIcon(): ReactElement {
+interface Props {
+    className?: string;
+    style?: CSSProperties;
+}
+
+export function LoadingIcon({ className = '', style }: Props): ReactElement {
+    const iconClassName: string = `${className} ${s.loading}`.trim();
+
     return (
         <svg
-            className={s.loading}
+            className={iconClassName}
+            style={style}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 120 206"
             preserveAspectRatio="none">
