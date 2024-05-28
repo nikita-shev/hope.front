@@ -1,0 +1,17 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.not-found
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  row-gap: 15px
+  width: 100%
+  //margin: 140px auto
+
+.not-found__img
+  width: 75px
+
+.not-found__text
+  @include m.font(14px, 600)
