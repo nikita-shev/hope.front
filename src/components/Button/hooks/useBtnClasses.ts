@@ -6,7 +6,7 @@ export const useBtnClasses = (type: Variant, customClass: string = ''): string =
     const universalClass: string = type !== 'text' ? s[`btn--${type}`] : '';
 
     const classes: string =
-        `${mainClass}${type === 'text' ? ' ' : ` ${universalClass} `}${customClass}`.trim();
+        `${customClass} ${mainClass} ${type === 'text' ? '' : `${universalClass}`}`.trim();
 
     const buttons: { [key: string]: string } = {
         contained: classes,

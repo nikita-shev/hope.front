@@ -23,16 +23,16 @@ describe('Hook useBtnClasses()', () => {
 
     beforeEach(() => {
         mainClass = 'btn';
-        customClass = 'active';
+        customClass = 'header__btn';
         type = initValue();
     });
 
     test('should create a class based on variant=text', () => {
-        expect(useBtnClasses(type, customClass)).toBe(`${mainClass} ${customClass}`);
+        expect(useBtnClasses(type, customClass)).toBe(`${customClass} ${mainClass}`);
     });
 
     test('should create a class based on variant=contained', () => {
-        expect(useBtnClasses(type, customClass)).toBe(`${mainClass} btn--${type} ${customClass}`);
+        expect(useBtnClasses(type, customClass)).toBe(`${customClass} ${mainClass} btn--${type}`);
     });
 
     test('should create a class based on variant=outlined', () => {
