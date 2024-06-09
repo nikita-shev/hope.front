@@ -1,4 +1,4 @@
-import { IChoiceControlsStyles } from '@/types/ChoiceControls.ts';
+import { IControlInlineStyles } from '@/types/InlineStyles.ts';
 import s from '@components/Radio/Radio.module.sass';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
     name: string;
     label: string;
     isChecked: boolean;
-    style?: IChoiceControlsStyles;
+    style?: IControlInlineStyles;
     onChange: (id: string) => void;
 }
 
