@@ -13,7 +13,7 @@
 
 %commonBtnStyles
   @include m.font(12px, 400)
-  border: 1px solid var(--color-primary)
+  border: 1px solid var(--primary)
   border-radius: 25px
   transition: color 400ms ease-in, background-color 400ms ease-in
 
@@ -21,7 +21,7 @@
 .btn--contained
   @extend %commonBtnStyles
   color: #ffffff
-  background-color: var(--color-primary)
+  background-color: var(--primary)
 
   &:hover
     @media (min-width: 993px)
@@ -31,10 +31,10 @@
 
 .btn--outlined
   @extend %commonBtnStyles
-  color: var(--color-primary)
+  color: var(--primary)
   background-color: #ffffff
 
   &:hover
     @media (min-width: 993px)
       color: #ffffff
-      background-color: var(--color-primary)
+      background-color: var(--primary)
