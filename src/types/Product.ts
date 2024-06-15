@@ -23,6 +23,8 @@ interface IImages {
     links?: string[];
 }
 
+export type TRating = 0 | 1 | 2 | 3 | 4 | 5;
+
 export interface IProduct {
     id: string;
     name: string;
@@ -33,7 +35,7 @@ export interface IProduct {
     price: IPrice;
     isInStock: boolean;
     quantity: number;
-    rating: number;
+    rating: TRating;
     status: Statuses;
     colors: IColor[];
     sizes: Sizes[];
