@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute, InputHTMLAttributes, ReactElement } from 'react';
-import { IControlInlineStyles } from '@/types/ChoiceControls.ts';
+import { IControlInlineStyles } from '@/types/InlineStyles.ts';
 
 export type Validation = 'text' | 'email' | 'phone' | 'password' | 'passwordConfirmation';
 export type HTMLElements = HTMLInputElement | HTMLTextAreaElement;

@@ -1,10 +1,11 @@
 import { ReactElement } from 'react';
+import { TRating } from '@/types/Product.ts';
 import { Button } from '@components/Button';
 import { StarIcon } from '@components/icons';
 import s from '@components/cards/ProductCard/components/Rating/Rating.module.sass';
 
 interface Props {
-    value: number;
+    value: TRating;
 }
 
 export function Rating({ value }: Props): ReactElement {
@@ -15,7 +16,12 @@ export function Rating({ value }: Props): ReactElement {
         <div className={s.rating}>
             <div className={s['rating__stars']}>
                 {template.map((el) => (
-                    <Button key={el} className={s['rating__btn']} variant={'text'} onClick={() => {}}>
+                    <Button
+                        key={el}
+                        className={s['rating__btn']}
+                        variant={'text'}
+                        onClick={() => {}}
+                    >
                         <StarIcon isActive={el <= value} />
                     </Button>
                 ))}

@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, ReactElement } from 'react';
-import { IChoiceControlsStyles } from '@/types/ChoiceControls.ts';
+import { IControlInlineStyles } from '@/types/InlineStyles.ts';
 import s from '@components/Checkbox/Checkbox.module.sass';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
     defaultChecked?: boolean;
     disabled?: boolean;
     className?: string;
-    style?: IChoiceControlsStyles;
+    style?: IControlInlineStyles;
     onChange: (value: boolean) => void;
 }
 

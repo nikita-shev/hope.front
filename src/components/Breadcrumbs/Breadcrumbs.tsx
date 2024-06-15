@@ -1,10 +1,6 @@
 import { ReactElement } from 'react';
+import { IBreadcrumb } from '@components/Breadcrumbs/Breadcrumbs.types.ts';
 import s from '@components/Breadcrumbs/Breadcrumbs.module.sass';
-
-interface IBreadcrumb {
-    title: string;
-    link: string;
-}
 
 interface Props {
     list: IBreadcrumb[];
