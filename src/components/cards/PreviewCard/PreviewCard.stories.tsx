@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { PreviewCard } from '@components/cards/PreviewCard/PreviewCard.tsx';
-import { product } from '@components/cards/shared/stories/product.ts';
+import { product } from '@components/cards/shared/data/product.ts';
 
 type Story = StoryObj<typeof PreviewCard>;
 
