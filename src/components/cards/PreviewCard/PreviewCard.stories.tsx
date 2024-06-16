@@ -5,7 +5,7 @@ import { product } from '@components/cards/shared/stories/product.ts';
 type Story = StoryObj<typeof PreviewCard>;
 
 const meta: Meta<typeof PreviewCard> = {
-    title: 'Components/PreviewCard',
+    title: 'COMPONENTS/Preview Card',
     component: PreviewCard,
     tags: ['autodocs'],
     parameters: {

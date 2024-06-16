@@ -5,7 +5,7 @@ import { TextField } from '@components/TextField/TextField.tsx';
 type Story = StoryObj<typeof TextField>;
 
 const meta: Meta<typeof TextField> = {
-    title: 'UI/TextField',
+    title: 'INPUTS/Text Field',
     component: TextField,
     tags: ['autodocs'],
     parameters: {

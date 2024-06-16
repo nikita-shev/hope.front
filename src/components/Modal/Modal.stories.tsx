@@ -8,7 +8,7 @@ import { Modal } from '@components/Modal/Modal.tsx';
 type Story = StoryObj<typeof Modal>;
 
 const meta: Meta<typeof Modal> = {
-    title: 'Components/Modal',
+    title: 'MODALS/Modal',
     component: Modal,
     tags: ['autodocs'],
     parameters: {

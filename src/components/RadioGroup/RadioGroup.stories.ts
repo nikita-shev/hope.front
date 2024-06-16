@@ -5,7 +5,7 @@ import { RadioGroup } from '@components/RadioGroup';
 type Story = StoryObj<typeof RadioGroup>;
 
 const meta: Meta<typeof RadioGroup> = {
-    title: 'UI/RadioGroup',
+    title: 'INPUTS/Radio Group',
     component: RadioGroup,
     tags: ['autodocs'],
     parameters: {

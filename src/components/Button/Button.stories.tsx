@@ -5,7 +5,7 @@ import { Button } from '@components/Button';
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-    title: 'UI/Button',
+    title: 'INPUTS/Button',
     component: Button,
     tags: ['autodocs'],
     parameters: {

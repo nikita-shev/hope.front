@@ -5,7 +5,7 @@ import { Paper } from '@components/Paper/Paper.tsx';
 type Story = StoryObj<typeof Paper>;
 
 const meta: Meta<typeof Paper> = {
-    title: 'Surfaces/Paper',
+    title: 'SURFACES/Paper',
     component: Paper,
     tags: ['autodocs'],
     parameters: {
