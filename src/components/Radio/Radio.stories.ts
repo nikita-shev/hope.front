@@ -4,7 +4,7 @@ import { Radio } from '@components/Radio/Radio.tsx';
 type Story = StoryObj<typeof Radio>;
 
 const meta: Meta<typeof Radio> = {
-    title: 'UI/Radio',
+    title: 'INPUTS/Radio',
     component: Radio,
     tags: ['autodocs'],
     parameters: {

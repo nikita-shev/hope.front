@@ -30,7 +30,7 @@ export function Select({ options, children, className = '', style }: Props): Rea
                 <li
                     key={el.title}
                     className={s['select__item']}
-                    style={{ '--product-color': el.param?.value } as CSSProperties}>
+                    style={{ '--product-color': el.param?.value }}>
                     <Button
                         className={`${s['select__btn--list']} ${s['select__btn']}`}
                         ref={listBtnRef}
@@ -50,7 +50,7 @@ export function Select({ options, children, className = '', style }: Props): Rea
             <div className={`${className} ${s['select__wrap']}`.trim()} style={style}>
                 <Button
                     className={`${s['select__btn']} ${s['select__btn--header']}`}
-                    style={{ '--product-color': selectedOption.param?.value } as CSSProperties}
+                    style={{ '--product-color': selectedOption.param?.value }}
                     ref={headerRef}
                     variant={'text'}
                     title={selectedOption.title}

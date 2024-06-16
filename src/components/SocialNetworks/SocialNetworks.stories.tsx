@@ -4,7 +4,7 @@ import { SocialNetworks } from '@components/SocialNetworks';
 type Story = StoryObj<typeof SocialNetworks>;
 
 const meta: Meta<typeof SocialNetworks> = {
-    title: 'Components/SocialNetworks',
+    title: 'COMPONENTS/Social Networks',
     component: SocialNetworks,
     tags: ['autodocs'],
     parameters: {

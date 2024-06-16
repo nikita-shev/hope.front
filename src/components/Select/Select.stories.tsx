@@ -4,7 +4,7 @@ import { Select } from '@components/Select';
 type Story = StoryObj<typeof Select>;
 
 const meta: Meta<typeof Select> = {
-    title: 'UI/Select',
+    title: 'INPUTS/Select',
     component: Select,
     tags: ['autodocs'],
     parameters: {

@@ -4,7 +4,7 @@ import { Rating } from '@components/cards/ProductCard/components/Rating/Rating.t
 type Story = StoryObj<typeof Rating>;
 
 const meta: Meta<typeof Rating> = {
-    title: 'UI/Rating',
+    title: 'COMPONENTS/Rating',
     component: Rating,
     tags: ['autodocs'],
     parameters: {

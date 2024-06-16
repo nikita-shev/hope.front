@@ -5,7 +5,7 @@ import { Checkbox } from '@components/Checkbox';
 type Story = StoryObj<typeof Checkbox>;
 
 const meta: Meta<typeof Checkbox> = {
-    title: 'UI/Checkbox',
+    title: 'INPUTS/Checkbox',
     component: Checkbox,
     tags: ['autodocs'],
     parameters: {

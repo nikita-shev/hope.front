@@ -4,7 +4,7 @@ import { Breadcrumbs } from '@components/Breadcrumbs/Breadcrumbs.tsx';
 type Story = StoryObj<typeof Breadcrumbs>;
 
 const meta: Meta<typeof Breadcrumbs> = {
-    title: 'Navigation/Breadcrumbs',
+    title: 'NAVIGATION/Breadcrumbs',
     component: Breadcrumbs,
     tags: ['autodocs'],
     parameters: {
