@@ -36,7 +36,7 @@
             }
         ]
     },
-    "include": ["src", "./declaration.d.ts"],
+    "include": ["src", "declaration.d.ts"],
     "references": [
         {
             "path": "./tsconfig.node.json"
