@@ -1,0 +1,60 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+@mixin itemSize($width, $height)
+  width: #{$width}px
+  height: #{$height}px
+
+
+.social-networks
+  display: inline-flex
+  flex-direction: column
+
+
+.social-networks__title
+  margin-bottom: 10px
+  @include m.font(14px, 700)
+  text-align: center
+  color: var(--color-text)
+
+
+.social-networks__list
+  display: flex
+  justify-content: center
+  column-gap: 15px
+
+.social-networks__item
+  @include itemSize(30, 30)
+
+.social-networks__item--size_small
+  @include itemSize(20, 20)
+
+.social-networks__item--size_medium
+  @include itemSize(30, 30)
+
+.social-networks__item--size_large
+  @include itemSize(40, 40)
+
+
+.social-networks__link
+  display: inline-block
+  width: 100%
+  height: 100%
+
+
+.social-networks__img
+  --color: #00a2e2
+
+  width: 100%
+  height: 100%
+  fill: var(--color)
+  transition: transform 0.2s linear
+
+  &--border
+    padding: 2px
+    border: 2px solid var(--color)
+    border-radius: 5px
+
+  &:hover
+    @media (min-width: 993px)
+      transform: scale(1.1)

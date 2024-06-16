@@ -1,0 +1,68 @@
+@supports (-webkit-appearance: none) or (-moz-appearance: none)
+  label[data-disabled='true']
+    cursor: default
+
+
+  input[data-custom-checkbox='true'],
+  input[data-custom-radio='true']
+    --active: var(--primary)
+    --active-inner: #FFFFFF
+    --focus: 2px rgba(39, 94, 254, .3)
+    --border: #C1C1C1
+    --border-hover: #8E8E8E
+    --background: #FFFFFF
+    --disabled: #F6F8FF
+    --disabled-inner: #C1C1C1
+
+    position: relative
+    display: inline-block
+    width: 19px
+    height: 19px
+    vertical-align: top
+    border: 2px solid var(--bc, var(--border))
+    background: var(--b, var(--background))
+    transition: background .3s, border-color .3s, box-shadow .2s
+    outline: none
+    cursor: pointer
+    -webkit-appearance: none
+    -moz-appearance: none
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s)
+      opacity: var(--o, 0)
+
+    &:checked
+      --b: var(--active)
+      --bc: var(--active)
+      --d-o: .3s
+      --d-t: .6s
+      --d-t-e: cubic-bezier(.2, .85, .32, 1.2)
+      --o: 1
+
+    &:disabled
+      --b: var(--disabled)
+      cursor: default
+      opacity: .9
+
+      &:checked
+        --b: var(--disabled-inner)
+        --bc: var(--border)
+
+      & + span
+        cursor: default
+
+    &:hover
+      &:not(:checked)
+        &:not(:disabled)
+          --bc: var(--border-hover)
+
+    &:focus
+      box-shadow: 0 0 0 var(--focus)
+
+    & + span
+      cursor: pointer

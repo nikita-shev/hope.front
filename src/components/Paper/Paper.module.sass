@@ -1,0 +1,17 @@
+.paper
+  position: relative
+  width: max-content
+  height: max-content
+  border-radius: 10px
+  background-color: #ffffff
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.12)
+  transition: box-shadow 300ms linear
+
+.paper[data-hover="true"]:hover
+  @media (min-width: 993px)
+    box-shadow: 0 2px 16px 5px rgba(0, 0, 0, 0.12)
+
+
+@media (max-width: 450px)
+  .paper
+    width: 100%

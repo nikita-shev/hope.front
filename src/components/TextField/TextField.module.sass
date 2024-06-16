@@ -1,0 +1,40 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.text-field
+  position: relative
+
+
+.input
+  @include m.font(14px, 300)
+  border: 1px solid #ffffff
+  color: var(--color-text)
+
+  &:focus
+    border: 1px solid var(--primary)
+    outline: none
+
+
+.textarea
+  @include m.font(14px, 300)
+  border: 1px solid #ffffff
+  color: var(--color-text)
+  resize: none
+
+  &:focus
+    border: 1px solid var(--primary)
+    outline: none
+
+  &::-webkit-scrollbar
+    width: 5px
+    background-color: #ffffff
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: rgba(159, 159, 159, 0.5)
+
+
+.error
+  position: absolute
+  @include m.font(12px, 400, var(--font), italic)
+  color: #ff0000

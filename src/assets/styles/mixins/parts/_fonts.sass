@@ -1,0 +1,17 @@
+@mixin _font-face($font_name, $file_name, $weight, $style)
+  @font-face
+    font-family: '#{$font_name}'
+    src: local('#{$font_name}'), url("@/assets/fonts/#{$file_name}.woff2") format("woff2"), url("@/assets/fonts/#{$file_name}.woff") format("woff")
+    font-weight: #{$weight}
+    font-style: #{$style}
+    font-display: swap
+
+
+@include _font-face("OpenSans", "OpenSans-Light", "300", "normal")
+@include _font-face("OpenSans", "OpenSans-Regular", "400", "normal")
+@include _font-face("OpenSans", "OpenSans-Semibold", "600", "normal")
+@include _font-face("OpenSans", "OpenSans-Bold", "700", "normal")
+
+@include _font-face("RobotoCondensed", "RobotoCondensed-Light", "300", "normal")
+@include _font-face("RobotoCondensed", "RobotoCondensed-Regular", "400", "normal")
+@include _font-face("RobotoCondensed", "RobotoCondensed-Bold", "700", "normal")

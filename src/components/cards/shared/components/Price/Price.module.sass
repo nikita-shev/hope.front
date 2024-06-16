@@ -1,0 +1,23 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.price
+  display: flex
+  align-items: center
+  justify-content: end
+  column-gap: 5px
+  @include m.font(20px, 600)
+
+
+.price__main
+  color: var(--color-text)
+
+.price__main--old
+  @include m.font(14px, 400)
+  text-decoration: line-through
+  color: #8E8E8E
+
+
+.price__new
+  font-style: italic
+  color: var(--color-notification)
