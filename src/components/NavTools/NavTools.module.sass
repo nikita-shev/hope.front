@@ -1,0 +1,93 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+@mixin nav-tool()
+  display: flex
+  flex-direction: column
+  align-items: center
+  min-width: 90px
+  padding: 5px 10px
+  @include m.font(12px, 600)
+  border: 1px solid transparent
+  border-radius: 10px
+  color: var(--color-text)
+  background-color: #ffffff
+  transition: background-color 200ms linear
+  &:hover
+    @media (min-width: 993px)
+      background-color: rgba(0, 0, 0, 0.04)
+
+
+.nav-tools
+  display: flex
+  align-items: center
+
+
+.log-in
+  @include nav-tool()
+
+.log-in__img
+  position: relative
+  left: -5px
+  width: 35px
+  margin-bottom: 5px
+
+
+.favourites
+  @include nav-tool()
+
+.favourites__img
+  width: 35px
+  margin-bottom: 5px
+
+
+.cart
+  position: relative
+  @include nav-tool()
+  &:before
+    content: attr(data-content)
+    position: absolute
+    top: -8px
+    right: -5px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 23px
+    height: 23px
+    @include m.font(10px, 600)
+    border-radius: 50%
+    color: #ffffff
+    background-color: #ffc740
+
+.cart__img
+  width: 35px
+  margin-bottom: 5px
+
+
+@media (max-width: 768px)
+  .nav-tools
+    column-gap: 14px
+
+  .log-in, .favourites, .cart
+    min-width: 35px
+    padding: 0
+    &__img
+      width: 30px
+      margin-bottom: 0
+    &__text
+      display: none
+
+  .cart:before
+    top: -10px
+    right: -10px
+    width: auto
+    height: auto
+    min-width: 18px
+    min-height: 18px
+    font-size: 8px
+
+@media (max-width: 450px)
+  .log-in, .favourites, .cart
+    min-width: auto
+    &__img
+      width: 25px
