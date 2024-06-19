@@ -1,13 +1,11 @@
-import { CSSProperties, ForwardedRef, forwardRef, ReactElement, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ForwardedRef, forwardRef, ReactElement, ReactNode } from 'react';
 import { Variant } from '@components/Button/Button.types.ts';
 import { useBtnClasses } from '@components/Button/hooks/useBtnClasses.ts';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant: Variant;
     children?: ReactNode;
     title?: string;
-    className?: string;
-    style?: CSSProperties;
     onClick: () => void;
 }
 
