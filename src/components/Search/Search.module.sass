@@ -1,0 +1,161 @@
+@use "@assets/styles/mixins/_index" as m
+@use '@assets/styles/global/_index'
+
+
+.search
+  --bg: #393939
+
+  width: 400px
+
+.search__title
+  @extend %visually-hidden
+
+
+.search__wrap
+  position: relative
+
+
+.search__input
+  width: 100%
+  padding: 15px 70px 15px 20px
+  border: 1px solid var(--primary)
+  border-radius: 50px
+  &::-webkit-search-cancel-button
+    -webkit-appearance: none
+  &:focus
+    border-color: darken(#00b5ee, 15%) // var(--primary)
+
+
+.search__remove-btn
+  position: absolute
+  top: 50%
+  right: 48px
+  width: 14px
+  height: 14px
+  transform: translateY(-50%)
+  opacity: 0.5
+  &:before, &:after
+    content: ''
+    position: absolute
+    display: block
+    top: 50%
+    left: 0
+    width: 100%
+    height: 2px
+    background-color: var(--bg)
+  &:before
+    transform: translateY(-50%) rotate(45deg)
+  &:after
+    transform: translateY(-50%) rotate(135deg)
+
+
+.search__btn
+  position: absolute
+  top: 50%
+  right: 20px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 19px
+  height: 19px
+  transform: translateY(-50%)
+  opacity: 0.5
+
+.search__btn[disabled]
+  cursor: auto
+
+.search__btn img
+  width: 100%
+  height: 100%
+
+
+.search__search-result
+  position: absolute
+  left: 50%
+  bottom: 1px
+  z-index: 11
+  transform: translateX(-50%) translateY(100%)
+
+.search-result
+  display: none
+  flex-direction: column
+  row-gap: 10px
+  width: 85%
+  max-height: 200px
+  padding: 10px
+  border: 1px solid rgba(57, 57, 57, 0.1)
+  background-color: #ffffff
+  overflow-y: auto
+
+.search-result__item
+  position: relative
+  transition: background-color 400ms linear
+  &:hover
+    @media (min-width: 993px)
+      background-color: rgba(0, 0, 0, 0.01)
+  &:not(:last-of-type):after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -5px
+    width: 100%
+    height: 1px
+    background-color: var(--bg)
+    opacity: 0.3
+
+.search-result__btn
+  position: relative
+  width: 100%
+  padding: 5px 5px 5px 10px
+  @include m.font(14px, 400)
+  text-align: left
+  color: var(--color-text)
+  transition: background-color 0.2s ease
+  &:hover
+    @media (min-width: 993px)
+      background-color: rgba(212, 212, 212, 0.3)
+  &:before
+    content: '›'
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+
+.search:focus-within .search-result
+  display: flex
+
+
+@media (max-width: 1200px)
+  .search
+    width: 370px
+
+@media (max-width: 768px)
+  .search
+    width: 315px
+    max-height: 39px
+
+  .search__input
+    padding-top: 12px
+    padding-bottom: 12px
+    font-size: 12px
+
+  .search__search-result
+    transform: translateX(-50%) translateY(100%)
+
+@media (max-width: 576px)
+  .search-result__btn
+    font-size: 13px
+
+@media (max-width: 450px)
+  .search
+    width: 234px
+
+  .search__input
+    padding-left: 15px
+    padding-right: 55px
+
+  .search__remove-btn
+    right: 41px
+
+  .search__btn
+    right: 16px
