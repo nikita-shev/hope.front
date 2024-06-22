@@ -1,0 +1,77 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+main .subscription
+  margin-bottom: 55px
+
+.subscription__container
+  padding: 42px 15px
+  background: url('@assets/images/bg.webp') lighten(#00b5ee, 50%) no-repeat center center / cover // var(--primary)
+
+
+.subscription__section-title
+  margin-bottom: 30px
+  font-size: 20px
+  text-transform: uppercase
+  &:after
+    height: 2px
+    background-color: var(--primary)
+
+.subscription__subtitle
+  margin-bottom: 20px
+  @include m.font(14px, 400)
+  text-align: center
+  text-transform: uppercase
+  color: var(--color-text)
+
+
+.subscription__subscription-form
+  margin-bottom: 30px
+
+.subscription-form
+  display: flex
+  justify-content: center
+  column-gap: 5px
+
+.subscription-form .input
+  width: 300px
+  padding: 12px 25px
+  border-radius: 50px
+
+.subscription-form .input + .error
+  right: 15px
+  bottom: 2px
+
+.subscription-form__btn
+  padding: 14px 40px
+
+
+.subscription__social-networks > h3
+  font-weight: 400
+  text-align: center
+  text-transform: uppercase
+
+
+@media (max-width: 768px)
+  main .subscription
+    margin-bottom: 40px
+
+  .subscription__container
+    padding-top: 35px
+    padding-bottom: 35px
+
+  .subscription__section-title
+    margin-bottom: 40px
+    font-size: 16px
+
+  .subscription-form .input
+    width: 265px
+
+@media (max-width: 576px)
+  .subscription__subscription-form
+    margin-bottom: 25px
+
+  .subscription-form
+    flex-direction: column
+    align-items: center
+    row-gap: 10px
