@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Button } from '@components/Button';
 import { SocialNetworks } from '@components/SocialNetworks';
 import { Advantages } from '@layout/Footer/components/Advantages/Advantages.tsx';
+import { ScrollTop } from '@layout/Footer/components/ScrollTop/ScrollTop.tsx';
 import { useFooter } from '@layout/Footer/hooks/useFooter.tsx';
 import s from '@layout/Footer/Footer.module.sass';
 
@@ -72,6 +73,8 @@ export function Footer(): ReactElement {
                     <small className={s['footer__copyright']}>
                         &copy;&nbsp;www.hope.ru 2024. Все&nbsp;права&nbsp;защищены.
                     </small>
+
+                    <ScrollTop />
                 </div>
             </footer>
         </>
