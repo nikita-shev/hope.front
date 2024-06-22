@@ -6,6 +6,7 @@ import { Navbar } from '@layout/Navbar';
 import { Footer } from '@layout/Footer';
 
 import { Preview } from '@layout/Preview';
+import { Subscription } from '@layout/Subscription';
 
 function App(): ReactElement {
     const ModalObj: IModalObj = useModal();
@@ -15,8 +16,9 @@ function App(): ReactElement {
             <Header />
             <Navbar />
 
-            <main style={{ height: '1500px' }}>
+            <main>
                 <Preview />
+                <Subscription />
             </main>
 
             <Footer />
