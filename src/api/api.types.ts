@@ -1,12 +1,12 @@
 import { Statuses } from '@/types/Product.ts';
 
-enum ResponseStatuses {
+export enum ResponseStatuses {
     OK = 0,
     FAILED = 1
 }
 
 export interface IResponse<T = {}> {
-    status: ResponseStatuses.OK | ResponseStatuses.FAILED;
+    status: ResponseStatuses;
     data: T;
     errors: string[];
 }
