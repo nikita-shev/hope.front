@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-type Statuses = 'sale' | 'new' | null;
+export type Statuses = 'sale' | 'new';
 type Sizes = '3XL' | '4XL' | '5XL' | 'L' | 'M' | 'S' | 'XL' | 'XS' | 'XXL';
 
 interface IColor {
