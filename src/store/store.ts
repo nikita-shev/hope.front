@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { appReducer } from '@store/app/app.reducer.ts';
+import { appReducer } from '@store/reducers';
 
 export const store = configureStore({
     reducer: {
