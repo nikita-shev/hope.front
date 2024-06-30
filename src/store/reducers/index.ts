@@ -3,4 +3,4 @@ export {
     productsSectionReducer,
     productsSectionActions,
     productsSectionThunks
-} from '@store/reducers/products/products.reducer.ts';
+} from '@store/reducers/products/ProductsSection/products-section.reducer.ts';
