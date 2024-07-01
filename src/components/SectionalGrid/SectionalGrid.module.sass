@@ -1,0 +1,44 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+.sectional-grid
+  width: auto
+
+.sectional-grid__items
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  justify-content: center
+  gap: 25px
+
+.sectional-grid__btn
+  display: block
+  margin: 20px auto auto
+  padding: 12px
+  @include m.font(12px, 400)
+  color: rgba(0, 0, 0, 0.5)
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.12)
+  transition: color 300ms linear
+  &:hover
+    @media (min-width: 993px)
+      color: var(--primary)
+
+
+@media (max-width: 1200px)
+  .sectional-grid__items
+    gap: 20px
+
+@media (max-width: 992px)
+  .sectional-grid__items
+    grid-template-columns: repeat(3, 1fr)
+
+@media (max-width: 768px)
+  .sectional-grid__items
+    grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 576px)
+  .sectional-grid__items
+    grid-template-columns: 70%
+
+@media (max-width: 450px)
+  .sectional-grid__items
+    grid-template-columns: 1fr

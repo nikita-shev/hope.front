@@ -14,6 +14,7 @@
 .card__wrap
   display: flex
   flex-direction: column
+  height: 100%
   padding: 20px
 
 .card__img
@@ -23,7 +24,7 @@
   margin: 10px auto 25px
   border-radius: 5px
   background-color: var(--primary)
-  object-fit: cover
+  object-fit: fill
 
 .card__title
   margin-bottom: 5px
@@ -58,6 +59,7 @@
   display: flex
   justify-content: space-between
   align-items: center
+  gap: 10px
 
 .card__favorites
   display: flex
@@ -84,7 +86,6 @@
 
   .card__footer
     flex-direction: column
-    gap: 10px
 
 @media (max-width: 992px)
   .card__wrap

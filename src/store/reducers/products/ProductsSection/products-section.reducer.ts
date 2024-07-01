@@ -5,14 +5,20 @@ import { createAppAsyncThunk } from '@store/utils/createAppAsyncThunk.ts';
 import { handleServerAppError, handleServerNetworkError } from '@store/utils/methods';
 
 const slice = createSlice({
-    name: 'products',
+    name: 'products-section',
     initialState: {
         products: [] as IProduct[]
     },
     reducers: {},
     extraReducers: (builder): void => {
         builder.addCase(fetchProducts.fulfilled, (state, action): void => {
-            state.products = action.payload;
+            action.payload.forEach((el) => {
+                const product = state.products.find((p) => p.id === el.id);
+
+                if (!product) {
+                    state.products.push(el);
+                }
+            });
         });
     }
 });
@@ -36,6 +42,6 @@ const fetchProducts = createAppAsyncThunk<IProduct[], IQuery>(
     }
 );
 
-export const productsReducer = slice.reducer;
-export const productsActions = slice.actions;
-export const productsThunks = { fetchProducts };
+export const productsSectionReducer = slice.reducer;
+export const productsSectionActions = slice.actions;
+export const productsSectionThunks = { fetchProducts };

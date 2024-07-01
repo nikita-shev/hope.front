@@ -15,7 +15,7 @@ interface Props {
 
 export function PreviewCard({ product, className = '', style }: Props): ReactElement {
     const cardClassName: string =
-        `${className} ${s.card} ${product.status ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
+        `${className} ${s.card} ${product.status !== 'all' ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
 
     const addProductToCart = () => {};
     const addProductToFavorites = () => {};
@@ -35,7 +35,9 @@ export function PreviewCard({ product, className = '', style }: Props): ReactEle
                         <a href="#">{product.name}</a>
                     </h3>
 
-                    <p className={s['card__subtitle']}>Артикул:&nbsp;{product.vendorCode}</p>
+                    <p className={s['card__subtitle']}>
+                        Артикул:&nbsp;{product.vendorCode.toLocaleString('ru')}
+                    </p>
 
                     <div className={`${s['card__product-buy']} ${s['product-buy']}`}>
                         <Price price={product.price} />
@@ -43,7 +45,8 @@ export function PreviewCard({ product, className = '', style }: Props): ReactEle
                         <Button
                             className={s['product-buy__cart']}
                             variant={'contained'}
-                            onClick={addProductToCart}>
+                            onClick={addProductToCart}
+                        >
                             <CartIcon />
                         </Button>
                     </div>
@@ -52,7 +55,8 @@ export function PreviewCard({ product, className = '', style }: Props): ReactEle
                         <Button
                             className={s['card__favorites']}
                             variant="text"
-                            onClick={addProductToFavorites}>
+                            onClick={addProductToFavorites}
+                        >
                             <img
                                 src="src/assets/images/icons/icons.svg#favorites"
                                 alt="Добавить в избранное"
