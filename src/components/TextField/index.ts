@@ -1,5 +1,2 @@
-import { ITextField } from '@components/TextField/TextField.types.ts';
-import { TextField } from '@components/TextField/TextField.tsx';
-
-export { TextField };
-export type { ITextField };
+export type { ITextField } from '@components/TextField/TextField.types.ts';
+export { TextField } from '@components/TextField/TextField.tsx';
