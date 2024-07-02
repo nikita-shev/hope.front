@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { RadioGroup } from '@components/RadioGroup';
+import { RadioGroup } from '@components/inputs/RadioGroup';
 
 type Story = StoryObj<typeof RadioGroup>;
 

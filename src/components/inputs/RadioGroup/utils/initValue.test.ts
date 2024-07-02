@@ -1,5 +1,5 @@
-import { IRadioGroup } from 'components/RadioGroup';
-import { initValue } from '@components/RadioGroup/utils/initValue.ts';
+import { IRadioGroup } from '@components/inputs/RadioGroup';
+import { initValue } from '@components/inputs/RadioGroup/utils/initValue.ts';
 
 describe('init value for Radio', () => {
     test('should return new data', () => {
