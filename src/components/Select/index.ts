@@ -1,3 +1,1 @@
-import { Select } from '@components/Select/Select.tsx';
-
-export { Select };
+export { Select } from '@components/Select/Select.tsx';
