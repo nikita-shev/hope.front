@@ -1,0 +1,75 @@
+@use "@assets/styles/mixins/_index" as m
+@use "@assets/styles/global/_index"
+
+
+body .advantages
+  margin-bottom: var(--sectional-margin)
+
+.advantages
+  border-top: 1px solid #a7e3f7
+  border-bottom: 1px solid #a7e3f7
+
+.advantages__container
+  padding: 35px 0
+
+
+.advantages__title
+  @extend %visually-hidden
+
+
+.advantages__list
+  --mr: 42px
+
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  gap: 25px var(--mr)
+
+.advantages__item
+  display: flex
+  align-items: center
+  width: 190px
+  min-height: 40px
+  padding-left: 50px
+  @include m.font(14px, 400)
+  line-height: 20px
+  color: var(--color-text)
+  background-repeat: no-repeat
+  background-position: left center
+  background-size: 35px 35px
+  &--img_experience
+    background-image: url('@assets/images/icons/icons.svg#experience')
+  &--img_refund
+    background-image: url('@assets/images/icons/icons.svg#return')
+  &--img_check
+    background-image: url('@assets/images/icons/icons.svg#check')
+  &--img_discount
+    width: 215px
+    background-image: url('@assets/images/icons/icons.svg#discounts')
+  &--img_delivery
+    width: 215px
+    background-image: url('@assets/images/icons/icons.svg#delivery')
+
+
+@media (max-width: 1200px)
+  .advantages__container
+    padding: 25px 0
+
+  .advantages__item
+    width: calc((100% - 2 * var(--mr)) / 3)
+
+@media (max-width: 768px)
+  body .advantages
+    margin-bottom: 30px
+
+  .advantages__item
+    width: calc((100% - var(--mr)) / 2)
+
+@media (max-width: 576px)
+  .advantages__list
+    max-width: 290px
+    margin: 0 auto
+
+  .advantages__item
+    width: 100%
+    padding-left: 55px

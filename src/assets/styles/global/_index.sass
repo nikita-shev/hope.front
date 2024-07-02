@@ -1,6 +1,7 @@
 @forward "parts/variables"
 @forward "parts/normalize"
 @forward "parts/ui/scrollbar"
+@forward "parts/ui/section-title"
 @forward "parts/components/toggles"
 
 
@@ -28,7 +29,7 @@ img
   max-width: 100%
 
 
-.visually-hidden
+%visually-hidden
   position: absolute
   width: 1px
   height: 1px
@@ -37,3 +38,6 @@ img
   border: 0
   clip: rect(0 0 0 0)
   overflow: hidden
+
+.visually-hidden
+  @extend %visually-hidden
