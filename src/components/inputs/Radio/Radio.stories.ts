@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Radio } from '@components/Radio/Radio.tsx';
+import { Radio } from '@components/inputs/Radio';
 
 type Story = StoryObj<typeof Radio>;
 

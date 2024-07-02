@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { IRadioGroup } from '@components/RadioGroup/RadioGroup.types.ts';
-import { IRadio, Radio } from '@components/Radio';
+import { IRadio, Radio } from '@components/inputs/Radio';
 import { initValue } from '@components/RadioGroup/utils/initValue.ts';
 
 interface Props {

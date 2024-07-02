@@ -1,5 +1,5 @@
 import { IControlInlineStyles } from '@/types/InlineStyles.ts';
-import s from '@components/Radio/Radio.module.sass';
+import s from '@components/inputs/Radio/Radio.module.sass';
 
 interface Props {
     id: string;
