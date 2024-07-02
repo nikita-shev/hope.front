@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Select } from '@components/Select';
+import { Select } from '@components/inputs/Select';
 
 type Story = StoryObj<typeof Select>;
 
