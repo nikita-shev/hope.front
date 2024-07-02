@@ -1,7 +1,7 @@
 import { ChangeEvent, ReactElement, useState } from 'react';
 import { Button } from '@components/inputs/Button';
 
-import s2 from '@components/TextField/TextField.module.sass'; // fix
+import s2 from '@components/inputs/TextField/TextField.module.sass'; // fix
 import s from '@components/Search/Search.module.sass';
 
 interface Props {

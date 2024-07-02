@@ -3,7 +3,7 @@ import { Button } from '@components/inputs/Button';
 import { SocialNetworks } from '@components/SocialNetworks';
 
 import s from '@layout/Subscription/Subscription.module.sass';
-import s2 from '@components/TextField/TextField.module.sass';
+import s2 from '@components/inputs/TextField/TextField.module.sass';
 
 export function Subscription(): ReactElement {
     return (
