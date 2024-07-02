@@ -1,5 +1,2 @@
-import { IRadioGroup } from '@components/RadioGroup/RadioGroup.types.ts';
-import { RadioGroup } from '@components/RadioGroup/RadioGroup.tsx';
-
-export { RadioGroup };
-export type { IRadioGroup };
+export type { IRadioGroup } from '@components/RadioGroup/RadioGroup.types.ts';
+export { RadioGroup } from '@components/RadioGroup/RadioGroup.tsx';
