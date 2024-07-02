@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { TRating } from '@/types/Product.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { StarIcon } from '@components/icons';
 import s from '@components/cards/ProductCard/components/Rating/Rating.module.sass';
 

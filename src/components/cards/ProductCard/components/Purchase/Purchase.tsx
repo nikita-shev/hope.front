@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { IPrice } from '@/types/Product.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { Price } from '@components/cards/shared/components/Price/Price.tsx';
 import s from '@components/cards/ProductCard/components/Purchase/Purchase.module.sass';
 

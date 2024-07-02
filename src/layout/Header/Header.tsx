@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { NavTools } from '@components/NavTools';
 import s from '@layout/Header/Header.module.sass';
 

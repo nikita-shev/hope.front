@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { useModal } from '@components/Modal/hooks/useModal.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { Modal } from '@components/Modal/Modal.tsx';
 
 type Story = StoryObj<typeof Modal>;
