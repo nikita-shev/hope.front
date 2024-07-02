@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { IProduct } from '@/types/Product.ts';
 import { Paper } from '@components/Paper';
-import { Checkbox } from '@components/Checkbox';
+import { Checkbox } from '@components/inputs/Checkbox';
 import { Rating } from '@components/cards/ProductCard/components/Rating/Rating.tsx';
 import { Purchase } from '@components/cards/ProductCard/components/Purchase/Purchase.tsx';
 import s from '@components/cards/ProductCard/ProductCard.module.sass';

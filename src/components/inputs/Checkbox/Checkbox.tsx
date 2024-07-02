@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, ReactElement } from 'react';
 import { IControlInlineStyles } from '@/types/InlineStyles.ts';
-import s from '@components/Checkbox/Checkbox.module.sass';
+import s from '@components/inputs/Checkbox/Checkbox.module.sass';
 
 interface Props {
     label: string;

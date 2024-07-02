@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Checkbox } from '@components/Checkbox';
+import { Checkbox } from '@components/inputs/Checkbox';
 
 type Story = StoryObj<typeof Checkbox>;
 
