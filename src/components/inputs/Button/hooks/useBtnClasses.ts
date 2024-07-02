@@ -1,5 +1,5 @@
-import { Variant } from '@components/Button/Button.types.ts';
-import s from '@components/Button/Button.module.sass';
+import { Variant } from '@components/inputs/Button/Button.types.ts';
+import s from '@components/inputs/Button/Button.module.sass';
 
 export const useBtnClasses = (type: Variant, customClass: string = ''): string => {
     const mainClass: string = s.btn;

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { SocialNetworks } from '@components/SocialNetworks';
 
 import s from '@layout/Subscription/Subscription.module.sass';

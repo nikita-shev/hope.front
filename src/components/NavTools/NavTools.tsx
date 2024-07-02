@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { navTools } from '@components/NavTools/values.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import s from '@components/NavTools/NavTools.module.sass';
 
 interface Props {

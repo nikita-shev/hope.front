@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement, useState } from 'react';
 import { IOption } from '@components/Select/Select.types.ts';
 import { useListVisibility } from '@components/Select/hooks/useListVisibility.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import s from '@components/Select/Select.module.sass';
 
 interface Props {

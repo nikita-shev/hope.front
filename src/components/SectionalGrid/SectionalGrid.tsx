@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { IProduct } from '@/types/Product.ts';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { PreviewCard } from '@components/cards/PreviewCard';
 import s from '@components/SectionalGrid/SectionalGrid.module.sass';
 

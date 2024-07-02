@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { SocialNetworks } from '@components/SocialNetworks';
 import { Advantages } from '@layout/Footer/components/Advantages/Advantages.tsx';
 import { ScrollTop } from '@layout/Footer/components/ScrollTop/ScrollTop.tsx';

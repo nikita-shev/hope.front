@@ -1,7 +1,7 @@
 import { ReactElement, MouseEvent, useRef, MutableRefObject } from 'react';
 import { IModal } from '@components/Modal/Modal.types.ts';
 import FocusTrap from 'focus-trap-react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import s from '@components/Modal/Modal.module.sass';
 
 interface Props {

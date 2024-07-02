@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { Search } from '@components/Search';
 import s from '@layout/Navbar/Navbar.module.sass';
 

@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react';
 import { IProduct } from '@/types/Product.ts';
 import { Paper } from '@components/Paper';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import { Price } from '@components/cards/shared/components/Price/Price.tsx';
 import { CartIcon } from '@components/icons';
 import s from '@components/cards/PreviewCard/PreviewCard.module.sass';

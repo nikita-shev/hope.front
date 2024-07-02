@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { Button } from '@components/Button';
+import { Button } from '@components/inputs/Button';
 import s from '@layout/Footer/components/ScrollTop/ScrollTop.module.sass';
 
 export function ScrollTop(): ReactElement {
