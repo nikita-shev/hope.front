@@ -6,7 +6,7 @@ import { Header } from '@layout/Header';
 import { Navbar } from '@layout/Navbar';
 import { Footer } from '@layout/Footer';
 
-function App(): ReactElement {
+export function App(): ReactElement {
     const ModalObj: IModalObj = useModal();
 
     return (
@@ -22,5 +22,3 @@ function App(): ReactElement {
         </ModalContext.Provider>
     );
 }
-
-export default App;
