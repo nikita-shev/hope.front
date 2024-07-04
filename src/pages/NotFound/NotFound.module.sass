@@ -1,0 +1,92 @@
+@use "@assets/styles/mixins/_index" as m
+
+
+main .not-found
+  margin-bottom: var(--sectional-margin)
+
+.not-found__container
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+.not-found__img
+  width: 300px
+  height: 300px
+  margin-right: 50px
+
+.not-found__title
+  margin-bottom: 20px
+  @include m.font(30px, 600)
+  color: #e66356
+  & span
+    @include m.font(38px, 700)
+
+.not-found__text
+  margin-bottom: 20px
+  @include m.font(16px, 400)
+  line-height: 20px
+  color: var(--color-text)
+
+
+.not-found__list
+  display: flex
+
+.not-found__item:first-of-type .not-found__link
+  padding-left: 15px
+  border-radius: 10px 0 0 10px
+
+.not-found__item:last-of-type .not-found__link
+  padding-right: 15px
+  border-radius: 0 10px 10px 0
+
+.not-found__link
+  display: inline-block
+  min-width: 90px
+  padding: 10px
+  @include m.font(14px, 400)
+  line-height: 1.6
+  text-align: center
+  border: 2px solid transparent
+  background-color: #efefef
+  transition: background-color 400ms linear
+  &:focus-visible
+    border: 2px solid darken(#00b5ee, 15%) // var(--primary)
+    outline: none
+  &:hover
+    @media (min-width: 993px)
+      background-color: darken(#efefef, 5%) // var(--primary)
+
+
+@media (max-width: 992px)
+  .not-found__img
+    width: 250px
+    height: 250px
+    margin-right: 30px
+
+@media (max-width: 768px)
+  .not-found__container
+    flex-direction: column
+
+  .not-found__img
+    margin-right: 0
+    margin-bottom: 20px
+
+  .not-found__wrap
+    max-width: 420px
+
+  .not-found__title
+    text-align: center
+
+  .not-found__text
+    max-width: 400px
+
+  .not-found__list
+    justify-content: center
+
+@media (max-width: 450px)
+  .not-found__title
+    font-size: 26px
+
+  .not-found__link
+    min-width: max-content

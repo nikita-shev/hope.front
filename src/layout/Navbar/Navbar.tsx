@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@components/inputs/Button';
 import { Search } from '@components/Search';
 import s from '@layout/Navbar/Navbar.module.sass';
@@ -19,9 +20,9 @@ export function Navbar(): ReactElement {
                     {menu.map((el) => {
                         return (
                             <li key={el.name}>
-                                <a className={s['navbar__link']} href="#">
+                                <Link className={s['navbar__link']} to={'/catalog'}>
                                     {el.name}
-                                </a>
+                                </Link>
                             </li>
                         );
                     })}
