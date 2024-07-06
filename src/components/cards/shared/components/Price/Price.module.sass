@@ -13,7 +13,7 @@
   color: var(--color-text)
 
 .price__main--old
-  @include m.font(14px, 400)
+  @include m.font(0.7em, 400)
   text-decoration: line-through
   color: #8E8E8E
 
@@ -23,10 +23,6 @@
   color: var(--color-notification)
 
 
-@media (max-width: 1200px)
+@media (max-width: 450px)
   .price
-    flex-direction: column
-
-@media (max-width: 768px)
-  .price
-    flex-direction: row
+    font-size: 18px
