@@ -40,7 +40,7 @@ export function PreviewCard({ product, className = '', style }: Props): ReactEle
                     </p>
 
                     <div className={`${s['card__product-buy']} ${s['product-buy']}`}>
-                        <Price price={product.price} />
+                        <Price className={s['product-buy__price']} price={product.price} />
 
                         <Button
                             className={s['product-buy__cart']}
