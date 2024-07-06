@@ -23,7 +23,9 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
             <span
                 key={el.name}
                 className={s['card-colors__item']}
-                style={{ '--ls-color': el.value }}></span>
+                style={{ '--ls-color': el.value }}
+                title={el.name}
+            ></span>
         );
     });
 
