@@ -49,3 +49,25 @@
   @include m.font(16px, 400)
   line-height: 1
   border-radius: 8px
+
+
+.purchase__favorites[disabled], .purchase__cart[disabled]
+  border-color: var(--color-disabled)
+  background-color: var(--color-disabled)
+  color: #ffffff
+  cursor: default
+
+.purchase__favorites[disabled]:hover:before
+  opacity: 0.5
+
+
+@media (max-width: 450px)
+  .purchase__favorites
+    width: 30px
+    height: 30px
+    &:before
+      width: 14px
+      height: 14px
+
+  .purchase__cart
+    font-size: 14px

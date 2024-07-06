@@ -2,6 +2,7 @@ import { CSSProperties, ReactElement } from 'react';
 import { IProduct } from '@/types/Product.ts';
 import { Paper } from '@components/Paper';
 import { Checkbox } from '@components/inputs/Checkbox';
+import { InStockIcon } from '@components/icons';
 import { Rating } from '@components/cards/ProductCard/components/Rating/Rating.tsx';
 import { Purchase } from '@components/cards/ProductCard/components/Purchase/Purchase.tsx';
 import s from '@components/cards/ProductCard/ProductCard.module.sass';
@@ -15,14 +16,16 @@ interface Props {
 
 export function ProductCard({ product, className = '', style }: Props): ReactElement {
     const cardClassName: string =
-        `${className} ${s.card} ${product.status ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
+        `${className} ${s.card} ${product.status !== 'all' ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
 
     const colors: ReactElement[] = product.colors.map((el) => {
         return (
             <span
                 key={el.name}
                 className={s['card-colors__item']}
-                style={{ '--ls-color': el.value }}></span>
+                style={{ '--ls-color': el.value }}
+                title={el.name}
+            ></span>
         );
     });
 
@@ -41,13 +44,7 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
                             <a href="#">{product.name}</a>
                         </h3>
 
-                        <span
-                            className={s['card-header__in-stock']}
-                            style={{
-                                '--ls-color': product.isInStock ? '#31c657' : '#fb0000'
-                            }}>
-                            Есть в наличии
-                        </span>
+                        <InStockIcon isInStock={product.isInStock} />
                     </header>
 
                     <div className={s['card__inner']}>
@@ -70,7 +67,8 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
                         className={s['card__purchase']}
                         price={product.price}
                         isInCart={true}
-                        isInFavorites={true}
+                        isInFavorites={false}
+                        isInStock={product.isInStock}
                         addToCart={() => {}}
                         addToFavorites={() => {}}
                     />

@@ -8,6 +8,7 @@ interface Props {
     price: IPrice;
     isInCart: boolean;
     isInFavorites: boolean;
+    isInStock: boolean;
     className?: string;
     addToCart: () => void;
     addToFavorites: () => void;
@@ -17,6 +18,7 @@ export function Purchase({
     price,
     isInCart,
     isInFavorites,
+    isInStock,
     className = '',
     addToCart,
     addToFavorites
@@ -32,12 +34,15 @@ export function Purchase({
                     className={s['purchase__favorites']}
                     variant={'text'}
                     data-favorites={isInFavorites}
-                    onClick={addToFavorites}></Button>
+                    disabled={!isInStock}
+                    onClick={addToFavorites}
+                />
 
                 <Button
                     className={s['purchase__cart']}
                     variant={isInCart ? 'contained' : 'outlined'}
                     title={isInCart ? 'В корзине' : 'Купить'}
+                    disabled={!isInStock}
                     onClick={addToCart}
                 />
             </div>
