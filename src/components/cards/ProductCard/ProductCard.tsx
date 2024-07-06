@@ -2,6 +2,7 @@ import { CSSProperties, ReactElement } from 'react';
 import { IProduct } from '@/types/Product.ts';
 import { Paper } from '@components/Paper';
 import { Checkbox } from '@components/inputs/Checkbox';
+import { InStockIcon } from '@components/icons';
 import { Rating } from '@components/cards/ProductCard/components/Rating/Rating.tsx';
 import { Purchase } from '@components/cards/ProductCard/components/Purchase/Purchase.tsx';
 import s from '@components/cards/ProductCard/ProductCard.module.sass';
@@ -41,13 +42,7 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
                             <a href="#">{product.name}</a>
                         </h3>
 
-                        <span
-                            className={s['card-header__in-stock']}
-                            style={{
-                                '--ls-color': product.isInStock ? '#31c657' : '#fb0000'
-                            }}>
-                            Есть в наличии
-                        </span>
+                        <InStockIcon isInStock={product.isInStock} />
                     </header>
 
                     <div className={s['card__inner']}>
