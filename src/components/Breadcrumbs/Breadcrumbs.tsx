@@ -20,9 +20,13 @@ export function Breadcrumbs({ list }: Props): ReactElement {
 
     return (
         <article className={s.breadcrumbs}>
-            <h2 className={`${s['breadcrumbs__title']} visually-hidden`}>Навигация по страницам</h2>
+            <div className="container">
+                <h2 className={`${s['breadcrumbs__title']} visually-hidden`}>
+                    Навигация по страницам
+                </h2>
 
-            <ul className={s['breadcrumbs__list']}>{breadcrumbs}</ul>
+                <ul className={s['breadcrumbs__list']}>{breadcrumbs}</ul>
+            </div>
         </article>
     );
 }

@@ -1,6 +1,9 @@
 @use "@assets/styles/mixins/_index" as m
 
 
+main .breadcrumbs
+  margin-bottom: var(--sectional-margin)
+
 .breadcrumbs
   width: 100%
 
@@ -34,7 +37,7 @@
     pointer-events: none
 
 .breadcrumbs__link
-  @include m.font(15px, 300)
+  @include m.font(14px, 300)
 
 
 @media (max-width: 992px)
