@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import { IBreadcrumb } from '@components/Breadcrumbs/Breadcrumbs.types.ts';
 import s from '@components/Breadcrumbs/Breadcrumbs.module.sass';
 
@@ -10,9 +11,9 @@ export function Breadcrumbs({ list }: Props): ReactElement {
     const breadcrumbs: ReactElement[] = list.map((el) => {
         return (
             <li key={el.title} className={s['breadcrumbs__item']}>
-                <a className={s['breadcrumbs__link']} href={el.link}>
+                <Link className={s['breadcrumbs__link']} to={el.path}>
                     {el.title}
-                </a>
+                </Link>
             </li>
         );
     });
