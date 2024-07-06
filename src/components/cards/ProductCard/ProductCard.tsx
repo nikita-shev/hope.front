@@ -15,7 +15,7 @@ interface Props {
 
 export function ProductCard({ product, className = '', style }: Props): ReactElement {
     const cardClassName: string =
-        `${className} ${s.card} ${product.status ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
+        `${className} ${s.card} ${product.status !== 'all' ? `${ls.card} ${ls[`card--${product.status}`]}` : ''} `.trim();
 
     const colors: ReactElement[] = product.colors.map((el) => {
         return (
@@ -70,7 +70,8 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
                         className={s['card__purchase']}
                         price={product.price}
                         isInCart={true}
-                        isInFavorites={true}
+                        isInFavorites={false}
+                        isInStock={product.isInStock}
                         addToCart={() => {}}
                         addToFavorites={() => {}}
                     />
