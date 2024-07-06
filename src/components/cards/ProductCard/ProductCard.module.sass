@@ -102,3 +102,32 @@
 .card__purchase
   grid-column: 2/3
   grid-row: 1/3
+
+
+@media (max-width: 992px)
+  .card
+    flex-direction: column
+    gap: 20px 0
+
+  .card__img
+    margin: 0 auto
+
+  .card__purchase
+    grid-column: 1 / 2
+    grid-row: 4 / 5
+    flex-direction: row
+    justify-content: space-between
+
+@media (max-width: 768px)
+  .card__purchase
+    flex-direction: column
+
+@media (max-width: 450px)
+  .card-header__title
+    font-size: 14px
+
+  .card__description
+    font-size: 12px
+
+  .card__other
+    justify-content: space-around
