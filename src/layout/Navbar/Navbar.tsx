@@ -20,7 +20,10 @@ export function Navbar(): ReactElement {
                     {menu.map((el) => {
                         return (
                             <li key={el.name}>
-                                <Link className={s['navbar__link']} to={'/catalog'}>
+                                <Link
+                                    className={s['navbar__link']}
+                                    to={`/catalog?page=1&category=${el.category}`}
+                                >
                                     {el.name}
                                 </Link>
                             </li>
