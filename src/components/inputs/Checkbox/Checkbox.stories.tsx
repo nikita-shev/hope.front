@@ -19,26 +19,26 @@ const meta: Meta<typeof Checkbox> = {
 
 export const Checked: Story = {
     args: {
-        defaultChecked: true
+        checked: true
     }
 };
 
 export const Unchecked: Story = {
     args: {
-        defaultChecked: false
+        checked: false
     }
 };
 
 export const DisabledAndChecked: Story = {
     args: {
-        defaultChecked: true,
+        checked: true,
         disabled: true
     }
 };
 
 export const DisabledAndUnchecked: Story = {
     args: {
-        defaultChecked: false,
+        checked: false,
         disabled: true
     }
 };
