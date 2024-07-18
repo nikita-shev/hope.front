@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IProduct } from '@/types/Product.ts';
-import { IQuery, productsAPI, ResponseStatuses } from '@/api';
-import { createAppAsyncThunk } from '@store/utils/createAppAsyncThunk.ts';
 import { handleServerAppError, handleServerNetworkError } from '@store/utils/methods';
+import { createAppAsyncThunk } from '@store/utils/createAppAsyncThunk.ts';
+import { convertQueryParams, IQuery, productsAPI, ResponseStatuses } from '@/api';
+import { IProduct } from '@/types/Product.ts';
 
 const slice = createSlice({
     name: 'products-section',
@@ -24,11 +24,11 @@ const slice = createSlice({
 });
 
 // Thunks
-const fetchProducts = createAppAsyncThunk<IProduct[], IQuery>(
+const fetchProducts = createAppAsyncThunk<IProduct[], { query: IQuery }>(
     `${slice.name}/fetchProducts`,
     async (payload, { dispatch, rejectWithValue }) => {
         try {
-            const response = await productsAPI.getProducts(payload);
+            const response = await productsAPI.getProducts(convertQueryParams(payload.query));
             const { data, status, errors } = response.data;
 
             handleServerAppError(errors, dispatch);
