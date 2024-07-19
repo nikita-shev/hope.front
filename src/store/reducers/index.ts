@@ -4,7 +4,11 @@ export {
     productsSectionActions,
     productsSectionThunks
 } from '@store/reducers/products/ProductsSection/products-section.reducer.ts';
-
+export {
+    productCatalogReducer,
+    productCatalogActions,
+    productCatalogThunks
+} from '@store/reducers/products/ProductCatalog/product-catalog.reducer.ts';
 export {
     filtersReducer,
     filtersActions,
