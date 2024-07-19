@@ -11,7 +11,7 @@ export function FiltersIcon(): ReactElement {
         >
             <path
                 d="M4 4L9 12V18L15 21V12L20 4H4Z"
-                stroke="#000000"
+                stroke="#393939"
                 // stroke-width="1.5"
                 // stroke-linecap="round"
                 // stroke-linejoin="round"
