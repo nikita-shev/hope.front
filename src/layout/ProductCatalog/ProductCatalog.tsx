@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@store/store.ts';
 import { productCatalogThunks } from '@store/reducers';
@@ -15,6 +15,8 @@ export function ProductCatalog(): ReactElement {
     const [isDisplayedFilters, setIsDisplayedFilters] = useState(true);
     const products: IProduct[] = useAppSelector((state) => state.productCatalog.products);
     const dispatch = useAppDispatch();
+    const page = useRef<number>(1);
+    const loader = useRef<HTMLDivElement | null>(null);
 
     const options: { title: string }[] = [
         { title: 'Сначала недорогие' },
@@ -23,8 +25,25 @@ export function ProductCatalog(): ReactElement {
     ];
 
     useEffect(() => {
-        dispatch(productCatalogThunks.fetchProducts({ query: searchParams.toString() }));
+        page.current = 1;
+
+        dispatch(productCatalogThunks.fetchFilteredProducts({ query: searchParams.toString() }));
     }, [searchParams]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                const query: URLSearchParams = new URLSearchParams(searchParams.toString());
+                query.set('page', `${++page.current}`);
+
+                dispatch(productCatalogThunks.fetchProducts({ query: query.toString() }));
+            }
+        });
+
+        loader.current && observer.observe(loader.current);
+
+        return () => observer.disconnect();
+    }, [products]);
 
     const changeDisplayOfFilters = () => setIsDisplayedFilters(!isDisplayedFilters);
 
@@ -65,7 +84,7 @@ export function ProductCatalog(): ReactElement {
                             )}
                         </div>
 
-                        <div className={s['products__loading']}></div>
+                        <div ref={loader} className={s['products__loading']}></div>
                     </div>
                 </div>
             </div>
