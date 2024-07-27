@@ -22,7 +22,7 @@ export function Navbar(): ReactElement {
                             <li key={el.name}>
                                 <Link
                                     className={s['navbar__link']}
-                                    to={`/catalog?page=1&category=${el.category}`}
+                                    to={`/catalog?category=${el.category}`}
                                 >
                                     {el.name}
                                 </Link>

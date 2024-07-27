@@ -30,10 +30,8 @@ export function Filters({ className = '', isDisplayed = true }: Props): ReactEle
     const applyFilters = (): void => setSearchParams(filters.join('&'));
 
     const resetFilters = (): void => {
-        const params: string = new URLSearchParams([['page', '1']]).toString();
-
-        addFilter('', () => [params]);
-        setSearchParams(params);
+        addFilter('', () => ['']);
+        setSearchParams('');
     };
 
     const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => e.preventDefault();
