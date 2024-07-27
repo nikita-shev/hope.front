@@ -3,6 +3,7 @@ import { handleServerAppError, handleServerNetworkError } from '@store/utils/met
 import { createAppAsyncThunk } from '@store/utils/createAppAsyncThunk.ts';
 import { convertQueryParams, IQuery, productsAPI, ResponseStatuses } from '@/api';
 import { IProduct } from '@/types/Product.ts';
+import { IProducts } from '@/types/Products.ts';
 
 const slice = createSlice({
     name: 'products-section',
@@ -12,7 +13,7 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder): void => {
         builder.addCase(fetchProducts.fulfilled, (state, action): void => {
-            action.payload.forEach((el) => {
+            action.payload.products.forEach((el) => {
                 const product = state.products.find((p) => p.id === el.id);
 
                 if (!product) {
@@ -24,7 +25,7 @@ const slice = createSlice({
 });
 
 // Thunks
-const fetchProducts = createAppAsyncThunk<IProduct[], { query: IQuery }>(
+const fetchProducts = createAppAsyncThunk<IProducts, { query: IQuery }>(
     `${slice.name}/fetchProducts`,
     async (payload, { dispatch, rejectWithValue }) => {
         try {

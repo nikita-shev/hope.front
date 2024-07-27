@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { IResponse } from '@/api/api.types.ts';
-import { IProduct } from '@/types/Product.ts';
+import { IProducts } from '@/types/Products.ts';
 
 const instance = axios.create({
     baseURL: 'http://localhost:4000/api/'
@@ -8,7 +8,7 @@ const instance = axios.create({
 
 export const productsAPI = {
     getProducts(query: string) {
-        return instance.get<IResponse<IProduct[]>>(`products?${query}`);
+        return instance.get<IResponse<IProducts>>(`products?${query}`);
     }
 };
 

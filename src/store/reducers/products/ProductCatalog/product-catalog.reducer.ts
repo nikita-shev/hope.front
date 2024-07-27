@@ -3,29 +3,39 @@ import { createAppAsyncThunk } from '@store/utils';
 import { handleServerAppError, handleServerNetworkError } from '@store/utils/methods';
 import { convertQueryParams, IQuery, productsAPI, ResponseStatuses } from '@/api';
 import { IProduct } from '@/types/Product.ts';
+import { IProducts } from '@/types/Products.ts';
 
 const slice = createSlice({
     name: 'product-catalog',
     initialState: {
-        products: [] as IProduct[]
+        products: [] as IProduct[],
+        productsCount: 0
     },
     reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchFilteredProducts.fulfilled, (state, action) => {
-                state.products = action.payload;
+                const { products, productsCount } = action.payload;
+
+                state.products = products;
+                state.productsCount = productsCount;
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
-                action.payload.forEach((el) => {
+                const { products, productsCount } = action.payload;
+
+                products.forEach((el) => {
                     const product = state.products.find((item) => item.id === el.id);
 
                     !product && state.products.push(el);
                 });
+
+                state.productsCount = productsCount;
             });
     }
 });
 
-const fetchFilteredProducts = createAppAsyncThunk<IProduct[], { query: string | IQuery }>(
+// Thunks
+const fetchFilteredProducts = createAppAsyncThunk<IProducts, { query: string | IQuery }>(
     `${slice.name}/fetchFilteredProducts`,
     async (payload, { dispatch, rejectWithValue }) => {
         try {
@@ -43,7 +53,7 @@ const fetchFilteredProducts = createAppAsyncThunk<IProduct[], { query: string | 
     }
 );
 
-const fetchProducts = createAppAsyncThunk<IProduct[], { query: string | IQuery }>(
+const fetchProducts = createAppAsyncThunk<IProducts, { query: string | IQuery }>(
     `${slice.name}/fetchProducts`,
     async (payload, { dispatch, rejectWithValue }) => {
         try {

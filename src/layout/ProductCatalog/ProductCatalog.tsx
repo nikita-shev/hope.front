@@ -14,6 +14,7 @@ export function ProductCatalog(): ReactElement {
     const [searchParams] = useSearchParams();
     const [isDisplayedFilters, setIsDisplayedFilters] = useState(true);
     const products: IProduct[] = useAppSelector((state) => state.productCatalog.products);
+    const productsCount: number = useAppSelector((state) => state.productCatalog.productsCount);
     const dispatch = useAppDispatch();
     const page = useRef<number>(1);
     const loader = useRef<HTMLDivElement | null>(null);
@@ -32,7 +33,7 @@ export function ProductCatalog(): ReactElement {
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
+            if (entries[0].isIntersecting && productsCount !== products.length) {
                 const query: URLSearchParams = new URLSearchParams(searchParams.toString());
                 query.set('page', `${++page.current}`);
 
@@ -52,7 +53,7 @@ export function ProductCatalog(): ReactElement {
             <div className={'container'}>
                 <header className={s['product-catalog__header']}>
                     <h2 className={`${s['product-catalog__section-title']} section-title`}>
-                        Найдено {products.length} товаров
+                        Найдено {productsCount} товаров
                     </h2>
 
                     <div className={s['product-catalog__inner']}>
