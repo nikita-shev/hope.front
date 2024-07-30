@@ -24,13 +24,14 @@ export function Select({ options, children, className = '', style }: Props): Rea
     };
 
     const list: ReactElement[] = options
-        .filter((el) => el !== selectedOption)
+        .filter((el) => el.title !== selectedOption.title)
         .map((el) => {
             return (
                 <li
                     key={el.title}
                     className={s['select__item']}
-                    style={{ '--product-color': el.param?.value }}>
+                    style={{ '--product-color': el.param?.value }}
+                >
                     <Button
                         className={`${s['select__btn--list']} ${s['select__btn']}`}
                         ref={listBtnRef}
