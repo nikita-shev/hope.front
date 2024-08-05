@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@store/store.ts';
 import { productCatalogThunks } from '@store/reducers';
 import { IProduct } from '@/types/Product.ts';
+import { options } from '@layout/ProductCatalog/data/data.ts';
 import { Button } from '@components/inputs/Button';
 import { Select } from '@components/inputs/Select';
 import { Filters } from '@layout/Filters/Filters.tsx';
@@ -13,22 +14,15 @@ import s from '@layout/ProductCatalog/ProductCatalog.module.sass';
 export function ProductCatalog(): ReactElement {
     const [searchParams] = useSearchParams();
     const [isDisplayedFilters, setIsDisplayedFilters] = useState(true);
+    const [sortType, setSortType] = useState(options[0].order);
     const products: IProduct[] = useAppSelector((state) => state.productCatalog.products);
     const productsCount: number = useAppSelector((state) => state.productCatalog.productsCount);
     const dispatch = useAppDispatch();
     const page = useRef<number>(1);
     const loader = useRef<HTMLDivElement | null>(null);
 
-    const options: { title: string }[] = [
-        { title: 'Сначала недорогие' },
-        { title: 'Сначала дорогие' },
-        { title: 'По наименованию' }
-    ];
-
     useEffect(() => {
-        page.current = 1;
-
-        dispatch(productCatalogThunks.fetchFilteredProducts({ query: searchParams.toString() }));
+        getProducts({ order: 1 });
     }, [searchParams]);
 
     useEffect(() => {
@@ -36,6 +30,7 @@ export function ProductCatalog(): ReactElement {
             if (entries[0].isIntersecting && productsCount !== products.length) {
                 const query: URLSearchParams = new URLSearchParams(searchParams.toString());
                 query.set('page', `${++page.current}`);
+                query.set('order', `${sortType}`);
 
                 dispatch(productCatalogThunks.fetchProducts({ query: query.toString() }));
             }
@@ -46,7 +41,20 @@ export function ProductCatalog(): ReactElement {
         return () => observer.disconnect();
     }, [products]);
 
+    const getProducts = ({ order }: { order: number }): void => {
+        const query: URLSearchParams = new URLSearchParams(searchParams.toString());
+        query.set('order', `${order}`);
+        page.current = 1;
+
+        setSortType(order);
+        dispatch(productCatalogThunks.fetchFilteredProducts({ query: query.toString() }));
+    };
+
     const changeDisplayOfFilters = () => setIsDisplayedFilters(!isDisplayedFilters);
+
+    const sortProducts = ({ value: order }: { value: number }): void => {
+        getProducts({ order });
+    };
 
     return (
         <section className={s['product-catalog']}>
@@ -66,7 +74,12 @@ export function ProductCatalog(): ReactElement {
                             <span>Фильтры</span>
                         </Button>
 
-                        <Select className={s['product-catalog__sorting']} options={options} />
+                        <Select
+                            className={s['product-catalog__sorting']}
+                            selected={sortType}
+                            options={options}
+                            onChange={sortProducts}
+                        />
                     </div>
                 </header>
 
