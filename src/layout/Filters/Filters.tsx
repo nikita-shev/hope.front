@@ -4,6 +4,7 @@ import { productSpecFilters } from '@layout/Filters/data/data.ts';
 import { Button } from '@components/inputs/Button';
 import { Paper } from '@components/Paper';
 import { Filter } from '@layout/Filters/components/Filter/Filter.tsx';
+import { Price } from '@layout/Filters/components/Price/Price.tsx';
 import s from '@layout/Filters/Filters.module.sass';
 
 interface Props {
@@ -58,18 +59,7 @@ export function Filters({ className = '', isDisplayed = true }: Props): ReactEle
                         addFilter={addFilter}
                         removeFilter={removeFilter}
                     >
-                        <div style={{ display: 'flex', columnGap: '5px' }}>
-                            <input
-                                type="text"
-                                style={{ width: '50%', padding: '5px', borderRadius: '5px' }}
-                                placeholder={'0'}
-                            />
-                            <input
-                                type="text"
-                                style={{ width: '50%', padding: '5px', borderRadius: '5px' }}
-                                placeholder={'9 999'}
-                            />
-                        </div>
+                        <Price />
                     </Filter>
 
                     <Filter
