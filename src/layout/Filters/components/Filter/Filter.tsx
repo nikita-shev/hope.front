@@ -1,11 +1,11 @@
-import { ChangeEvent, ReactElement, ReactNode, useEffect, useState } from 'react';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@store/store.ts';
 import { filtersThunks } from '@store/reducers';
 import { FilterType } from '@layout/Filters/Filters.types.ts';
-import { IReturnValue } from '@components/inputs/Checkbox';
+import { Checkbox, IReturnValue } from '@components/inputs/Checkbox';
+import { TextField } from '@components/inputs/TextField';
 import { Button } from '@components/inputs/Button';
-import { Checkbox } from '@components/inputs/Checkbox';
 import s from '@layout/Filters/components/Filter/Filter.module.sass';
 
 interface Props {
@@ -60,8 +60,9 @@ export function Filter({
         }
     };
 
-    const changeSearchField = (e: ChangeEvent<HTMLInputElement>): void =>
-        setSearchField(e.currentTarget.value);
+    const changeSearchField = (value: string): void => setSearchField(value);
+
+    const removeSearchField = (): void => setSearchField('');
 
     const resetFilters = (): void => {
         setSelectedFilters([]);
@@ -82,13 +83,26 @@ export function Filter({
                 {children ?? (
                     <>
                         {isSearchField && (
-                            <input
-                                className={s['filter__input']}
-                                type="text"
-                                value={searchField}
-                                placeholder={'Поиск'}
-                                onChange={changeSearchField}
-                            />
+                            <div className={s['filter__field-wrap']}>
+                                <TextField
+                                    className={s['filter__input']}
+                                    type={'text'}
+                                    name={'search'}
+                                    value={searchField}
+                                    placeholder={'Поиск'}
+                                    onChange={(value) => {
+                                        changeSearchField(value);
+                                    }}
+                                />
+
+                                {searchField && (
+                                    <Button
+                                        className={`${s['filter__remove-btn']} remove-icon`}
+                                        variant={'text'}
+                                        onClick={removeSearchField}
+                                    />
+                                )}
+                            </div>
                         )}
 
                         <ul className={s['filter__list']}>

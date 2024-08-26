@@ -36,17 +36,19 @@
   opacity: 0
 
 
+.filter__field-wrap
+  position: relative
+  margin-bottom: 15px
+
 .filter__input
   width: 100%
-  margin-bottom: 15px
-  padding: 10px
-  @include m.font(16px, 400)
-  border: 1px solid var(--color-text)
+  padding: 10px 25px 10px 10px
   border-radius: 5px
-  color: var(--color-text)
-  &:focus-visible
-    outline: none
-    border-color: var(--color-text)
+
+.filter__remove-btn
+  right: 8px
+  width: 14px
+  height: 14px
 
 
 .filter__list
