@@ -18,7 +18,11 @@ export function Search({ className }: Props): ReactElement {
     const removeSearch = () => setSearch('');
 
     const RemoveBtn: boolean | ReactElement = !isEmptyField && (
-        <Button className={s['search__remove-btn']} variant={'text'} onClick={removeSearch} />
+        <Button
+            className={`${s['search__remove-btn']} remove-icon`}
+            variant={'text'}
+            onClick={removeSearch}
+        />
     );
 
     return (
