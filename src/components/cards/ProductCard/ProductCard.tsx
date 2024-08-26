@@ -56,7 +56,9 @@ export function ProductCard({ product, className = '', style }: Props): ReactEle
                     <div className={s['card__other']}>
                         <Checkbox
                             className={s['card__comparison']}
+                            name={'compare'}
                             label={'Сравнить'}
+                            checked={false}
                             onChange={() => {}}
                         />
 

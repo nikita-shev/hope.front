@@ -12,7 +12,11 @@ export interface IResponse<T = {}> {
 }
 
 export interface IQuery {
-    page: string;
-    limit: string;
+    page: number;
+    limit?: number;
     status?: Statuses;
+    category?: string;
+    brand?: string;
+    colors?: string;
+    sizes?: string;
 }

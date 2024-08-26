@@ -7,7 +7,7 @@
 .select__wrap
   position: relative
   display: inline-block
-  width: 200px
+  width: 100%
 
 
 .select__btn
@@ -33,6 +33,7 @@
 .select__list
   position: absolute
   bottom: 0
+  z-index: 10
   //display: none
   width: 100%
   max-height: 150px
@@ -79,3 +80,11 @@
 
 //.displayed-filter
 //  display: block
+
+
+@media (max-width: 450px)
+  .select
+    width: 100%
+
+  .select__btn
+    font-size: 12px

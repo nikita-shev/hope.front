@@ -1,6 +1,7 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@store/store.ts';
 import { productsSectionThunks } from '@store/reducers';
+import { IQuery } from '@/api';
 import { IProduct, Statuses } from '@/types/Product.ts';
 import { SectionalGrid } from '@components/SectionalGrid';
 import s from '@layout/ProductsSection/ProductsSection.module.sass';
@@ -24,10 +25,9 @@ export function ProductsSection({ title, status, isDisplayed = true }: Props): R
     const getProducts = (): void => {
         const newPage: number = page + 1;
         const limit: number = 4;
+        const query: IQuery = { page: newPage, limit, status };
 
-        dispatch(
-            productsSectionThunks.fetchProducts({ page: `${newPage}`, limit: `${limit}`, status })
-        );
+        dispatch(productsSectionThunks.fetchProducts({ query }));
         setPage(newPage);
     };
 

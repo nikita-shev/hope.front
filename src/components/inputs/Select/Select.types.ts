@@ -8,4 +8,10 @@ interface IParam {
 export interface IOption {
     title: string;
     param?: IParam;
+    order?: number;
+}
+
+export interface IReturnValue {
+    value: number;
+    name?: string;
 }
