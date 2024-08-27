@@ -1,0 +1,50 @@
+@use '@assets/styles/mixins/_index' as m
+
+
+.filters
+  position: relative
+  width: 240px
+  overflow: hidden
+
+
+.filters__form
+  height: 0
+  opacity: 0
+  transition: height 300ms linear, opacity 300ms linear
+
+
+.filters__wrap
+  display: flex
+  flex-direction: column
+  row-gap: 10px
+  padding: 15px
+
+.filters__reset-btn
+  padding: 10px
+  @include m.font(12px, 400)
+  border: 1px solid var(--primary)
+  border-radius: 25px
+  color: var(--color-text)
+  transition: background-color 400ms ease-in, border-color 400ms ease-in
+  &:hover
+    @media (min-width: 993px)
+      border-color: rgba(0, 0, 0, 0.08)
+      background-color: rgba(0, 0, 0, 0.08)
+
+.filters__apply-btn
+  width: 100%
+  padding: 10px
+
+
+.is-displayed
+  height: 100%
+  opacity: 1
+
+
+@media (max-width: 768px)
+  .filters
+    width: 210px
+
+@media (max-width: 576px)
+  .filters
+    width: 100%

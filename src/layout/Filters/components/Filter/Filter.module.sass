@@ -1,0 +1,76 @@
+@use '@assets/styles/mixins/_index' as m
+
+
+.filter:not(:last-of-type)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+
+
+.filter__header-btn
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  padding: 15px
+  @include m.font(16px, 600)
+  text-align: left
+  border: 1ps solid var(--color-text)
+  color: var(--color-text)
+  &:after
+    content: url('@assets/images/icons/icons.svg#arrow-select')
+    width: 14px
+    height: 14px
+
+.filter__header-btn[data-displayed='true']:after
+  rotate: 180deg
+
+
+.filter__wrap
+  position: relative
+  display: flex
+  flex-direction: column
+  height: 0
+  margin-top: -15px
+  padding: 0 15px 15px
+  overflow: hidden
+  transition: height 300ms linear, opacity 300ms linear, margin 300ms linear // ease-in
+  opacity: 0
+
+
+.filter__field-wrap
+  position: relative
+  margin-bottom: 15px
+
+.filter__input
+  width: 100%
+  padding: 10px 25px 10px 10px
+  border-radius: 5px
+
+.filter__remove-btn
+  right: 8px
+  width: 14px
+  height: 14px
+
+
+.filter__list
+  display: flex
+  flex-direction: column
+  row-gap: 10px
+  max-height: 150px
+  padding: 3px
+  overflow-y: auto
+
+.filter__item
+  display: flex
+
+
+.filter__reset-btn
+  margin-top: 15px
+  @include m.font(12px, 400)
+  text-align: end
+  color: orange
+
+
+.is-displayed
+  height: 100%
+  margin-top: 0
+  opacity: 1
